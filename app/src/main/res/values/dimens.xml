@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="common_min">8dp</dimen>
+    <dimen name="common_default">16dp</dimen>
+    <dimen name="common_middle">24dp</dimen>
+
+    <dimen name="text_line_spacing_extra">2sp</dimen>
+    <dimen name="text_tiny">11sp</dimen>
+    <dimen name="text_stunted">12sp</dimen>
+    <dimen name="text_small">14sp</dimen>
+    <dimen name="text_default">16sp</dimen>
+    <dimen name="text_section_title">18sp</dimen>
+    <dimen name="text_subtitle">20sp</dimen>
+    <dimen name="text_medium">22sp</dimen>
+    <dimen name="text_large">24sp</dimen>
+    <dimen name="text_extra_large">28sp</dimen>
+    <dimen name="text_huge">32sp</dimen>
+
+    <dimen name="letter_spacing_button">0.05</dimen>
+    <dimen name="letter_spacing_text_button">0.03</dimen>
+    <dimen name="common_max">64dp</dimen>
+</resources>

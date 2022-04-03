@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">Bankairos</string>
+    <string name="login_password">Contraseña</string>
+    <string name="login_email">Correo electrónico</string>
+    <string name="login_register">registro</string>
+    <string name="login_go_to">Ir a</string>
+    <string name="login_btn">Ingresar</string>
+    <string name="login_name">Nombre(s)</string>
+    <string name="login_last_names">Apellidos</string>
+    <string name="login_link">Ingresa con otra cuenta</string>
+    <string name="login_link_register">Regístrate</string>
+    <string name="login_question">¿Aún no te registras?</string>
+    <string name="register_question">Ingresa con tu cuenta</string>
+    <string name="register_login">login</string>
 </resources>
