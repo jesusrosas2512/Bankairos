@@ -16,4 +16,6 @@
     <string name="onBoarding_login">Login</string>
     <string name="onBoarding_register">Registro</string>
     <string name="onBoarding_location">estado - localidad</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
