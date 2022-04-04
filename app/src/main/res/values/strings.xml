@@ -12,4 +12,8 @@
     <string name="login_question">¿Aún no te registras?</string>
     <string name="register_question">Ingresa con tu cuenta</string>
     <string name="register_login">login</string>
+    <string name="onBoarding_welcome">Bienvenido</string>
+    <string name="onBoarding_login">Login</string>
+    <string name="onBoarding_register">Registro</string>
+    <string name="onBoarding_location">estado - localidad</string>
 </resources>
