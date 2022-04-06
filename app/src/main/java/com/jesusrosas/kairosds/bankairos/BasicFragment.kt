@@ -7,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.jesusrosas.kairosds.bankairos.databinding.FragmentBasicBinding
-import com.jesusrosas.kairosds.bankairos.databinding.FragmentFirstBinding
 
 
 class BasicFragment : Fragment() {
