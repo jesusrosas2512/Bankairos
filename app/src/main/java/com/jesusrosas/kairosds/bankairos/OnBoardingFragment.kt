@@ -22,7 +22,7 @@ class OnBoardingFragment : Fragment() {
 
         mBinding = OnBoardingFragmentBinding.inflate(inflater, container, false)
 
-        val textView: TextView = mBinding.tvOnBoard
+        val textView: TextView = mBinding.tvWelcome
         viewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
         }

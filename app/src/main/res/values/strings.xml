@@ -26,4 +26,6 @@
     <string name="login_question">¿Aún no te registras?</string>
     <string name="register_question">Ingresa con tu cuenta</string>
     <string name="register_login">login</string>
+    <string name="onBoarding_welcome">Bienvenido</string>
+    <string name="register_btn">Registrar</string>
 </resources>
