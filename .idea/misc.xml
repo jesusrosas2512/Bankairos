@@ -1,5 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/Usuario/AndroidStudioProjects/Bankairos/app/src/main/res/drawable/ic__wallet.xml" value="0.2605" />
+        <entry key="..\:/Users/Usuario/AndroidStudioProjects/Bankairos/app/src/main/res/drawable/ic_card.xml" value="0.2605" />
+        <entry key="..\:/Users/Usuario/AndroidStudioProjects/Bankairos/app/src/main/res/drawable/ic_exit.xml" value="0.2605" />
+        <entry key="..\:/Users/Usuario/AndroidStudioProjects/Bankairos/app/src/main/res/drawable/ic_wallet.xml" value="0.248" />
+        <entry key="..\:/Users/Usuario/AndroidStudioProjects/Bankairos/app/src/main/res/layout/activity_home.xml" value="0.18541666666666667" />
+        <entry key="..\:/Users/Usuario/AndroidStudioProjects/Bankairos/app/src/main/res/layout/activity_main.xml" value="0.18070652173913043" />
+        <entry key="..\:/Users/Usuario/AndroidStudioProjects/Bankairos/app/src/main/res/layout/app_bar_layotu.xml" value="0.3625" />
+        <entry key="..\:/Users/Usuario/AndroidStudioProjects/Bankairos/app/src/main/res/layout/app_bar_layout.xml" value="0.18541666666666667" />
+        <entry key="..\:/Users/Usuario/AndroidStudioProjects/Bankairos/app/src/main/res/layout/content_base_form.xml" value="0.3625" />
+        <entry key="..\:/Users/Usuario/AndroidStudioProjects/Bankairos/app/src/main/res/layout/content_home.xml" value="0.3625" />
+        <entry key="..\:/Users/Usuario/AndroidStudioProjects/Bankairos/app/src/main/res/layout/fragment_add_card.xml" value="0.18541666666666667" />
+        <entry key="..\:/Users/Usuario/AndroidStudioProjects/Bankairos/app/src/main/res/layout/fragment_base.xml" value="0.3625" />
+        <entry key="..\:/Users/Usuario/AndroidStudioProjects/Bankairos/app/src/main/res/layout/fragment_base_form.xml" value="0.22" />
+        <entry key="..\:/Users/Usuario/AndroidStudioProjects/Bankairos/app/src/main/res/layout/fragment_basic.xml" value="0.3625" />
+        <entry key="..\:/Users/Usuario/AndroidStudioProjects/Bankairos/app/src/main/res/layout/fragment_first.xml" value="0.18541666666666667" />
+        <entry key="..\:/Users/Usuario/AndroidStudioProjects/Bankairos/app/src/main/res/layout/fragment_login.xml" value="0.33" />
+        <entry key="..\:/Users/Usuario/AndroidStudioProjects/Bankairos/app/src/main/res/layout/fragment_menu.xml" value="0.3625" />
+        <entry key="..\:/Users/Usuario/AndroidStudioProjects/Bankairos/app/src/main/res/layout/fragment_on_boarding.xml" value="0.3625" />
+        <entry key="..\:/Users/Usuario/AndroidStudioProjects/Bankairos/app/src/main/res/layout/fragment_register.xml" value="0.3625" />
+        <entry key="..\:/Users/Usuario/AndroidStudioProjects/Bankairos/app/src/main/res/layout/login_layout.xml" value="0.22" />
+        <entry key="..\:/Users/Usuario/AndroidStudioProjects/Bankairos/app/src/main/res/layout/on_boarding_layout.xml" value="0.18541666666666667" />
+        <entry key="..\:/Users/Usuario/AndroidStudioProjects/Bankairos/app/src/main/res/layout/register_layout.xml" value="0.23958333333333334" />
+        <entry key="..\:/Users/Usuario/AndroidStudioProjects/Bankairos/app/src/main/res/menu/nav_menu.xml" value="0.3625" />
+      </map>
+    </option>
+  </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
