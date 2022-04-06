@@ -25,6 +25,9 @@ class OnBoardingFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        /*let action = OnBoarding
+        findNavController().navigate()*/
+
 
 
         mBinding.tvLogin.setOnClickListener {
