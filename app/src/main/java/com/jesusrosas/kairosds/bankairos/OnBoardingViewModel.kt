@@ -7,7 +7,7 @@ import androidx.lifecycle.ViewModel
 class OnBoardingViewModel : ViewModel() {
 
     private val _text = MutableLiveData<String>().apply {
-        value = "On Boarding"
+        value = "Bienvenido"
     }
     val text: LiveData<String> = _text
 

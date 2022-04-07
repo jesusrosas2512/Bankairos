@@ -7,13 +7,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.fragment.app.viewModels
 import com.jesusrosas.kairosds.bankairos.databinding.OnBoardingFragmentBinding
 
 class OnBoardingFragment : Fragment() {
 
     private lateinit var mBinding: OnBoardingFragmentBinding
 
-    private lateinit var viewModel: OnBoardingViewModel
+    private val viewModel: OnBoardingViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
