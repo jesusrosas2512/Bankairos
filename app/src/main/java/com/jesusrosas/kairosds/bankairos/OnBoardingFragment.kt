@@ -1,31 +1,33 @@
 package com.jesusrosas.kairosds.bankairos
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
+import androidx.fragment.app.viewModels
+import com.jesusrosas.kairosds.bankairos.databinding.OnBoardingFragmentBinding
 
 class OnBoardingFragment : Fragment() {
 
-    companion object {
-        fun newInstance() = OnBoardingFragment()
-    }
+    private lateinit var mBinding: OnBoardingFragmentBinding
 
-    private lateinit var viewModel: OnBoardingViewModel
+    private val viewModel: OnBoardingViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.on_boarding_fragment, container, false)
-    }
+    ): View {
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(OnBoardingViewModel::class.java)
-        // TODO: Use the ViewModel
+        mBinding = OnBoardingFragmentBinding.inflate(inflater, container, false)
+
+        val textView: TextView = mBinding.tvWelcome
+        viewModel.text.observe(viewLifecycleOwner) {
+            textView.text = it
+        }
+
+        return mBinding.root
     }
 
 }
