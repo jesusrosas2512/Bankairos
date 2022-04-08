@@ -17,7 +17,7 @@ fun FrameLayout.inflateView(inflateView: String?, vm: BaseFormViewModel) {
             this.vm = vm
             lifecycleOwner = this@inflateView.context.lifecycleOwner()
         }
-        "register" -> RegisterLayoutBinding.inflate(LayoutInflater.from(context), this, true).apply {
+        "registro" -> RegisterLayoutBinding.inflate(LayoutInflater.from(context), this, true).apply {
             this.vm = vm
             lifecycleOwner = this@inflateView.context.lifecycleOwner()
         }
