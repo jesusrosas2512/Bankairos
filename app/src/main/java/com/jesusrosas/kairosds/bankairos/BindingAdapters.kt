@@ -160,6 +160,7 @@ fun TextInputLayout.setGreenStyle() {
     )
     val colorIcon = intArrayOf(
         getColor(context, R.color.primaryLightColor),
+        getColor(context, R.color.primaryLightColor),
         getColor(context, R.color.green)
     )
 
@@ -169,7 +170,11 @@ fun TextInputLayout.setGreenStyle() {
         intArrayOf(-android.R.attr.state_enabled),
         intArrayOf()
     )
-    val colorHint = colorIcon.clone()
+    val colorHint = intArrayOf(
+        getColor(context, R.color.primaryLightColor),
+        getColor(context, R.color.primaryLightColor),
+        getColor(context, R.color.green)
+    )
 
     defaultHintTextColor = ColorStateList(stateHint, colorHint)
     val stateText = arrayOf(

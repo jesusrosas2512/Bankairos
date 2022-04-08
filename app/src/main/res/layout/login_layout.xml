@@ -24,7 +24,7 @@
             android:hint="@string/login_email"
             app:endIconMode="clear_text"
             errorMessage="@{vm.emailError}"
-            successStyle="@{SuccessStyles.Orange}"
+            successStyle="@{SuccessStyles.Green}"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
             <com.google.android.material.textfield.TextInputEditText
