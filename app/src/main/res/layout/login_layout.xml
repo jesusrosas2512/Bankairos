@@ -5,7 +5,9 @@
     <data>
         <variable
             name="vm"
-            type="com.jesusrosas.kairosds.bankairos.BaseFormViewModel" />
+            type="com.jesusrosas.kairosds.bankairos.ui.BaseFormViewModel" />
+
+        <import type="com.jesusrosas.kairosds.bankairos.SuccessStyles" />
     </data>
 
     <LinearLayout
@@ -21,9 +23,12 @@
             android:layout_height="wrap_content"
             android:hint="@string/login_email"
             app:endIconMode="clear_text"
+            errorMessage="@{vm.emailError}"
+            successStyle="@{SuccessStyles.Orange}"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
             <com.google.android.material.textfield.TextInputEditText
+                onTextChanged="@{(value) -> vm.emailChanged(value)}"
                 android:id="@+id/etEmail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -37,11 +42,16 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/common_default"
             android:hint="@string/login_password"
+            errorMessage="@{vm.passwordError}"
+            hideErrorIcon="@{true}"
+            successStyle="@{SuccessStyles.Orange}"
             app:endIconMode="password_toggle"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/etName"
+                android:id="@+id/etPassword"
+                onTextChanged="@{(value) -> vm.passwordChanged(value)}"
+                android:imeOptions="actionDone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPassword"/>

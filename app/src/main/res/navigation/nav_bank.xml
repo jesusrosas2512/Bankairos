@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.jesusrosas.kairosds.bankairos.BaseFormFragment"
+        android:name="com.jesusrosas.kairosds.bankairos.ui.BaseFormFragment"
         android:label="fragment_login"
         tools:layout="@layout/fragment_base_form" />
 </navigation>

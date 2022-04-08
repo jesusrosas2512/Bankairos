@@ -1,4 +1,4 @@
-package com.jesusrosas.kairosds.bankairos
+package com.jesusrosas.kairosds.bankairos.ui
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,6 +8,8 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.viewModels
 import com.jesusrosas.kairosds.bankairos.databinding.FragmentBaseFormBinding
+import com.jesusrosas.kairosds.bankairos.inflateView
+import com.jesusrosas.kairosds.bankairos.ui.login.entities.Login
 
 class BaseFormFragment : Fragment() {
 
@@ -23,17 +25,21 @@ class BaseFormFragment : Fragment() {
         mBinding.vm = viewModel
 
         viewModel.frame.observe(viewLifecycleOwner) {
-            // Toast.makeText(context, it, Toast.LENGTH_SHORT).show()
             mBinding.btnLogin.text = it
             mBinding.flForm.inflateView(it, viewModel)
         }
 
         viewModel.tokenAccess.observe(viewLifecycleOwner) {
-            Toast.makeText(context, it, Toast.LENGTH_SHORT).show()
+            Toast.makeText(context, it, Toast.LENGTH_LONG).show()
+        }
+
+        viewModel.isFormValid.observe(viewLifecycleOwner){
+            mBinding.btnLogin.isEnabled = it
         }
 
         mBinding.btnLogin.setOnClickListener {
-            val loginData = Login("jrb.2512@gmail.com", "@kairosD5?")
+            val loginData = Login(viewModel.email.value.toString(), viewModel.password.value.toString())
+
             viewModel.login(loginData)
         }
 

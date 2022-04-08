@@ -1,6 +1,6 @@
 package com.jesusrosas.kairosds.bankairos.data.network
 
-import com.jesusrosas.kairosds.bankairos.Login
+import com.jesusrosas.kairosds.bankairos.ui.login.entities.Login
 import com.jesusrosas.kairosds.bankairos.core.RetrofitHelper
 import com.jesusrosas.kairosds.bankairos.data.model.Token
 import kotlinx.coroutines.Dispatchers
