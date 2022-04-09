@@ -14,6 +14,13 @@
     <string name="type_card">Tarjeta</string>
     <string name="type">Tipo</string>
 
+    <string name="error_empty_field">Campo vacío</string>
+    <string name="password_does_not_mach">Contraseña no coincide</string>
+    <string name="invalid_password">Contraseña incorrecta</string>
+    <string name="email_error">Introduzca correo válido</string>
+    <string name="password_login_error">Contraseña incorrecta, intenta de nuevo</string>
+    <string name="email_login_error">Correo incorrecto, intenta de nuevo</string>
+
     <string name="login_password">Contraseña</string>
     <string name="login_email">Correo electrónico</string>
     <string name="login_register">registro</string>
