@@ -35,9 +35,10 @@ class BaseFormViewModel : ViewModel() {
         _frame.postValue(form)
     }
 
-    fun login(loginData: Login){
+    fun login(){
         viewModelScope.launch {
-            val result = loginUseCase(loginData)
+            val loginRequest = Login(_email.value.toString(), _password.value.toString())
+            val result = loginUseCase(loginRequest)
             _tokenAccess.value = result.token
         }
 
