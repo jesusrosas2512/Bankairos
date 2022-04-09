@@ -38,6 +38,7 @@ class BaseFormFragment : Fragment() {
         }
 
         mBinding.btnLogin.setOnClickListener {
+
             val loginData = Login(viewModel.email.value.toString(), viewModel.password.value.toString())
 
             viewModel.login(loginData)

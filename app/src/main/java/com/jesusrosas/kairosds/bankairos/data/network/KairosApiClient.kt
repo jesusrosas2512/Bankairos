@@ -4,6 +4,7 @@ import com.jesusrosas.kairosds.bankairos.ui.login.entities.Login
 import com.jesusrosas.kairosds.bankairos.data.model.Token
 import retrofit2.Response
 import retrofit2.http.Body
+import retrofit2.http.Headers
 import retrofit2.http.POST
 
 interface KairosApiClient {
