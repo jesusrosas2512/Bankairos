@@ -11,4 +11,11 @@ class OnBoardingViewModel : ViewModel() {
     }
     val text: LiveData<String> = _text
 
+    private val _location = MutableLiveData<String>()
+    val location: LiveData<String> get() = _location
+
+    fun setLocation(location: String){
+        _location.value = location
+    }
+
 }
