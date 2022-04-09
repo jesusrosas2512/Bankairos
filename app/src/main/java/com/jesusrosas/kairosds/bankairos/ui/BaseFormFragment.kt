@@ -9,7 +9,7 @@ import android.widget.Toast
 import androidx.fragment.app.viewModels
 import com.jesusrosas.kairosds.bankairos.databinding.FragmentBaseFormBinding
 import com.jesusrosas.kairosds.bankairos.inflateView
-import com.jesusrosas.kairosds.bankairos.ui.login.entities.Login
+import com.jesusrosas.kairosds.bankairos.ui.login.viewmodel.BaseFormViewModel
 
 class BaseFormFragment : Fragment() {
 

@@ -18,7 +18,7 @@ import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
 import com.jesusrosas.kairosds.bankairos.databinding.LoginLayoutBinding
 import com.jesusrosas.kairosds.bankairos.databinding.RegisterLayoutBinding
-import com.jesusrosas.kairosds.bankairos.ui.BaseFormViewModel
+import com.jesusrosas.kairosds.bankairos.ui.login.viewmodel.BaseFormViewModel
 
 @BindingAdapter(value = ["inflateView", "vm"], requireAll = true)
 fun FrameLayout.inflateView(inflateView: String?, vm: BaseFormViewModel) {

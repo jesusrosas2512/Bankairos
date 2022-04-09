@@ -12,4 +12,11 @@ object RetrofitHelper {
             .build()
     }
 
+    fun getRetroGeo(): Retrofit {
+        return Retrofit.Builder()
+            .baseUrl("https://maps.googleapis.com/maps/api/geocode/")
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
+    }
+
 }

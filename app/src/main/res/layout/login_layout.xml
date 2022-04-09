@@ -5,7 +5,7 @@
     <data>
         <variable
             name="vm"
-            type="com.jesusrosas.kairosds.bankairos.ui.BaseFormViewModel" />
+            type="com.jesusrosas.kairosds.bankairos.ui.login.viewmodel.BaseFormViewModel" />
 
         <import type="com.jesusrosas.kairosds.bankairos.SuccessStyles" />
     </data>

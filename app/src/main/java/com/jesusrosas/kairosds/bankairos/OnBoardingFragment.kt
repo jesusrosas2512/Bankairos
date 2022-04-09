@@ -6,6 +6,7 @@ import android.content.pm.PackageManager
 import android.location.Location
 import android.location.LocationManager
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -13,6 +14,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
+import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.viewModels
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
@@ -20,7 +22,7 @@ import com.jesusrosas.kairosds.bankairos.databinding.OnBoardingFragmentBinding
 
 class OnBoardingFragment : Fragment() {
 
-    lateinit var mFusedLocationProviderClient: FusedLocationProviderClient
+    private lateinit var mFusedLocationProviderClient: FusedLocationProviderClient
 
     private lateinit var mBinding: OnBoardingFragmentBinding
 
@@ -36,22 +38,25 @@ class OnBoardingFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View {
+    ) = OnBoardingFragmentBinding.inflate(inflater, container, false).let {
+        it.vm = viewModel
+        it.lifecycleOwner = viewLifecycleOwner
+        it.root
+    }
 
-        mBinding = OnBoardingFragmentBinding.inflate(inflater, container, false)
+/*    fun <DB : ViewDataBinding> DB.bindLayout(bind: DB.() -> Unit) = bind(this).let {
+        lifecycleOwner = viewLifecycleOwner
+        root
+    }*/
 
-        val textView: TextView = mBinding.tvWelcome
-        viewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
-        }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
         finePermission.runWithPermission{
             Toast.makeText(context, "Granted", Toast.LENGTH_SHORT).show()
             mFusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(requireContext())
             readLocation()
         }
-
-        return mBinding.root
     }
 
     private fun readLocation(){
@@ -62,7 +67,8 @@ class OnBoardingFragment : Fragment() {
                     if (location == null){
                         context?.toast("Not located")
                     } else {
-                        mBinding.tvLocation.text = "Lat: ${location.latitude} Lon: ${location.longitude}"
+                        viewModel.setLocation(location.latitude.toString(), location.longitude.toString())
+                        Log.i("Location", "Lat: ${location.latitude} Lon: ${location.longitude}")
                     }
                 }
             }

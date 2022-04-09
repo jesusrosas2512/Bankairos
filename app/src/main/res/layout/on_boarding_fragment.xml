@@ -5,7 +5,9 @@
     tools:context=".OnBoardingFragment">
 
     <data>
-
+        <variable
+            name="vm"
+            type="com.jesusrosas.kairosds.bankairos.OnBoardingViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -53,7 +55,7 @@
             style="@style/TextAppearance.MaterialComponents.Headline5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            tools:text="@string/onBoarding_welcome"
+            tools:text="@{vm.text}"
             android:layout_marginBottom="64dp"
             app:layout_constraintBottom_toTopOf="@id/glHorizontal"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -98,7 +100,7 @@
             android:id="@+id/tvLocation"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/location"
+            android:text="@{vm.location}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

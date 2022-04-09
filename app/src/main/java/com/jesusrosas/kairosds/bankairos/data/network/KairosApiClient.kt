@@ -1,12 +1,11 @@
 package com.jesusrosas.kairosds.bankairos.data.network
 
+import com.jesusrosas.kairosds.bankairos.LocationReq
+import com.jesusrosas.kairosds.bankairos.LocationResponse
 import com.jesusrosas.kairosds.bankairos.ui.login.entities.Login
 import com.jesusrosas.kairosds.bankairos.data.model.Token
 import retrofit2.Response
-import retrofit2.http.Body
-import retrofit2.http.GET
-import retrofit2.http.Headers
-import retrofit2.http.POST
+import retrofit2.http.*
 
 interface KairosApiClient {
 
@@ -14,5 +13,13 @@ interface KairosApiClient {
     suspend fun getToken(
         @Body login: Login
     ): Response<Token>
+
+    @GET("json")
+    suspend fun getLocation(
+        @Query("latlng") latLng: String,
+        @Query("location_type") locType: String,
+        @Query("result_type") resType: String,
+        @Query("key") key: String
+    ): Response<LocationResponse>
 
 }

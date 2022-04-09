@@ -1,4 +1,4 @@
-package com.jesusrosas.kairosds.bankairos.ui
+package com.jesusrosas.kairosds.bankairos.ui.login.viewmodel
 
 import androidx.lifecycle.*
 import com.jesusrosas.kairosds.bankairos.ErrorMessage
@@ -41,7 +41,6 @@ class BaseFormViewModel : ViewModel() {
             val result = loginUseCase(loginRequest)
             _tokenAccess.value = result.token
         }
-
     }
 
     fun emailChanged(editTextValue: String){
