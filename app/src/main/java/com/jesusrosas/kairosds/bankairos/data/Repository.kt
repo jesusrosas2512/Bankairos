@@ -1,7 +1,5 @@
 package com.jesusrosas.kairosds.bankairos.data
 
-import com.jesusrosas.kairosds.bankairos.LocationReq
-import com.jesusrosas.kairosds.bankairos.LocationResponse
 import com.jesusrosas.kairosds.bankairos.ui.login.entities.Login
 import com.jesusrosas.kairosds.bankairos.data.model.Token
 import com.jesusrosas.kairosds.bankairos.data.model.TokenProvider
@@ -17,7 +15,4 @@ class Repository {
         return response
     }
 
-    suspend fun getLocation(location: LocationReq): LocationResponse {
-        return api.getLocation(location)
-    }
 }

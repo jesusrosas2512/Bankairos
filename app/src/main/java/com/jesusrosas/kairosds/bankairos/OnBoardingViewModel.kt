@@ -7,7 +7,6 @@ import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.launch
 
 class OnBoardingViewModel : ViewModel() {
-    val locationUseCase = LocationUseCase()
     private val _text = MutableLiveData<String>().apply {
         value = "Bienvenido"
     }
@@ -16,14 +15,8 @@ class OnBoardingViewModel : ViewModel() {
     private val _location = MutableLiveData("")
     val location: LiveData<String> get() = _location
 
-    fun setLocation(lat: String, lng: String){
-        viewModelScope.launch {
-            val locationRequest = LocationReq("${lat},${lng}", "ROOFTOP", "country", "AIzaSyBvjb6eeMhTPofo16NDeN70jePwLKcTeeA")
-            val result = locationUseCase(locationRequest)
-            _location.value = with(result){
-                this.plusCode.location
-            }
-        }
+    fun setLocation(address: String){
+        _location.value = address
     }
 
 }

@@ -3,9 +3,11 @@ package com.jesusrosas.kairosds.bankairos
 import android.Manifest
 import android.content.Context
 import android.content.pm.PackageManager
+import android.location.Geocoder
 import android.location.Location
 import android.location.LocationManager
 import android.os.Bundle
+import android.os.Looper
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -14,15 +16,13 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.fragment.app.viewModels
-import com.google.android.gms.location.FusedLocationProviderClient
-import com.google.android.gms.location.LocationServices
+import com.google.android.gms.location.*
 import com.jesusrosas.kairosds.bankairos.databinding.OnBoardingFragmentBinding
+import java.util.*
 
 class OnBoardingFragment : Fragment() {
 
     private lateinit var mFusedLocationProviderClient: FusedLocationProviderClient
-
-    private lateinit var mBinding: OnBoardingFragmentBinding
 
     private val viewModel: OnBoardingViewModel by viewModels()
 
@@ -46,7 +46,6 @@ class OnBoardingFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         finePermission.runWithPermission{
-            Toast.makeText(context, "Granted", Toast.LENGTH_SHORT).show()
             mFusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(requireContext())
             readLocation()
         }
@@ -54,17 +53,41 @@ class OnBoardingFragment : Fragment() {
 
     private fun readLocation(){
         if (isLocationEnabled()) {
-            if (ActivityCompat.checkSelfPermission(requireContext(), Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED){
-                mFusedLocationProviderClient.lastLocation.addOnCompleteListener{ task ->
+            if (ActivityCompat.checkSelfPermission(
+                    requireContext(),
+                    Manifest.permission.ACCESS_FINE_LOCATION
+                ) == PackageManager.PERMISSION_GRANTED
+            ) {
+                mFusedLocationProviderClient.lastLocation.addOnCompleteListener { task ->
                     val location: Location? = task.result
-                    if (location == null){
-                        context?.toast("Not located")
+                    if (location == null) {
+                        val locationRequest = LocationRequest.create().apply {
+                            interval = 100
+                            fastestInterval = 50
+                            priority = LocationRequest.PRIORITY_HIGH_ACCURACY
+                            maxWaitTime = 100
+                        }
+                        mFusedLocationProviderClient =
+                            LocationServices.getFusedLocationProviderClient(requireContext())
+                        Looper.myLooper()?.let {
+                            mFusedLocationProviderClient.requestLocationUpdates(
+                                locationRequest, locationCallback, it
+                            )
+                        }
                     } else {
-                        viewModel.setLocation(location.latitude.toString(), location.longitude.toString())
                         Log.i("Location", "Lat: ${location.latitude} Lon: ${location.longitude}")
+                        viewModel.setLocation(getCityName(location))
                     }
                 }
             }
+        } else context?.toast("Habilite ubicación")
+    }
+
+    private val locationCallback = object : LocationCallback(){
+        override fun onLocationResult(locationResult: LocationResult) {
+            val lastLocation: Location = locationResult.lastLocation
+            Log.d("Debug:","your last last location: "+ lastLocation.longitude.toString())
+            viewModel.setLocation(getCityName(lastLocation))
         }
     }
 
@@ -73,6 +96,17 @@ class OnBoardingFragment : Fragment() {
         return locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER) || locationManager.isProviderEnabled(
             LocationManager.NETWORK_PROVIDER
         )
+    }
+
+    private fun getCityName(location: Location):String{
+        val geoCoder = Geocoder(context, Locale.getDefault())
+        val address = geoCoder.getFromLocation(location.latitude,location.longitude,3)
+
+        val cityName = address[0].locality
+        val countryName = address[0].countryName
+        Log.d("Debug:", "Your City: $cityName ; your Country $countryName")
+
+        return "$cityName, $countryName"
     }
 
 }
