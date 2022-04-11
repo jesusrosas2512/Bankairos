@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.navArgs
 import com.jesusrosas.kairosds.bankairos.databinding.FragmentBaseFormBinding
 import com.jesusrosas.kairosds.bankairos.inflateView
 import com.jesusrosas.kairosds.bankairos.ui.login.viewmodel.BaseFormViewModel
@@ -15,14 +16,16 @@ class BaseFormFragment : Fragment() {
 
     private lateinit var mBinding: FragmentBaseFormBinding
     private val viewModel: BaseFormViewModel by viewModels()
+    private val safeArgs by navArgs<BaseFormFragmentArgs>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        // Inflate the layout for this fragment
         mBinding = FragmentBaseFormBinding.inflate(layoutInflater)
         mBinding.vm = viewModel
+
+        viewModel.changeForm(safeArgs.formType)
 
         viewModel.frame.observe(viewLifecycleOwner) {
             mBinding.btnLogin.text = it
@@ -31,6 +34,7 @@ class BaseFormFragment : Fragment() {
 
         viewModel.tokenAccess.observe(viewLifecycleOwner) {
             Toast.makeText(context, it, Toast.LENGTH_LONG).show()
+
         }
 
         viewModel.isFormValid.observe(viewLifecycleOwner){

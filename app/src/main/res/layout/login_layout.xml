@@ -8,6 +8,8 @@
             type="com.jesusrosas.kairosds.bankairos.ui.login.viewmodel.BaseFormViewModel" />
 
         <import type="com.jesusrosas.kairosds.bankairos.SuccessStyles" />
+
+
     </data>
 
     <LinearLayout

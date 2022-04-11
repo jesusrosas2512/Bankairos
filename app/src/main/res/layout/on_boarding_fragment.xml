@@ -72,7 +72,7 @@
             app:layout_constraintHorizontal_bias="0.9"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/glHorizontal"
-            android:onClick="@{() -> vm.goToFormClicked()}"
+            android:onClick="@{() -> vm.goToFormClicked(@string/register_login)}"
             style="@style/TextAppearance.MaterialComponents.Body1" />
 
         <View
@@ -86,7 +86,7 @@
 
         <TextView
             android:id="@+id/tvRegister"
-            android:onClick="@{() -> vm.goToFormClicked()}"
+            android:onClick="@{() -> vm.goToFormClicked(@string/login_register)}"
             style="@style/TextAppearance.MaterialComponents.Body1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

@@ -5,13 +5,14 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
 class OnBoardingViewModel : ViewModel() {
+
     private val _text = MutableLiveData<String>().apply {
         value = "Bienvenido"
     }
     val text: LiveData<String> = _text
 
-    private val _goToFormFragment = MutableLiveData(false)
-    val goToFormFragment: LiveData<Boolean> get() = _goToFormFragment
+    private val _goToFormFragment: MutableLiveData<String?> = MutableLiveData()
+    val goToFormFragment: LiveData<String?> get() = _goToFormFragment
 
     private val _location = MutableLiveData("")
     val location: LiveData<String> get() = _location
@@ -20,8 +21,8 @@ class OnBoardingViewModel : ViewModel() {
         _location.value = address
     }
 
-    fun goToFormClicked(){
-        _goToFormFragment.postValue(true)
+    fun goToFormClicked(formType: String){
+        _goToFormFragment.value = formType
     }
 
 }

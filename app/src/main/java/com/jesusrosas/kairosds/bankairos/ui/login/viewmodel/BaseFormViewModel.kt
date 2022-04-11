@@ -32,7 +32,7 @@ class BaseFormViewModel : ViewModel() {
     val isFormValid: LiveData<Boolean> get() = _isFormValid
 
     fun changeForm(form: String){
-        _frame.postValue(form)
+        _frame.value = form
     }
 
     fun login(){

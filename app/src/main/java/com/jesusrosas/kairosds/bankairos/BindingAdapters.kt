@@ -24,11 +24,11 @@ import com.jesusrosas.kairosds.bankairos.ui.login.viewmodel.BaseFormViewModel
 fun FrameLayout.inflateView(inflateView: String?, vm: BaseFormViewModel) {
     removeAllViews()
     when (inflateView) {
-        "login" -> LoginLayoutBinding.inflate(LayoutInflater.from(context), this, true).apply {
+        "Ingresar" -> LoginLayoutBinding.inflate(LayoutInflater.from(context), this, true).apply {
             this.vm = vm
             lifecycleOwner = this@inflateView.context.lifecycleOwner()
         }
-        "registro" -> RegisterLayoutBinding.inflate(LayoutInflater.from(context), this, true).apply {
+        "Registrar" -> RegisterLayoutBinding.inflate(LayoutInflater.from(context), this, true).apply {
             this.vm = vm
             lifecycleOwner = this@inflateView.context.lifecycleOwner()
         }

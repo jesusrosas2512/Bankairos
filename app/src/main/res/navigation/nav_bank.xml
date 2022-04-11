@@ -11,12 +11,25 @@
         android:label="on_boarding_fragment"
         tools:layout="@layout/on_boarding_fragment" >
         <action
-            android:id="@+id/action_onBoardingFragment_to_baseFormFragment"
-            app:destination="@id/baseFormFragment" />
+            android:id="@+id/to_baseFormFragment"
+            app:destination="@id/baseFormFragment">
+
+            <argument
+                android:name="formType"
+                app:argType="string" />
+
+        </action>
     </fragment>
     <fragment
         android:id="@+id/baseFormFragment"
         android:name="com.jesusrosas.kairosds.bankairos.ui.BaseFormFragment"
         android:label="fragment_base_form"
-        tools:layout="@layout/fragment_base_form" />
+        tools:layout="@layout/fragment_base_form">
+
+        <argument
+            android:name="formType"
+            app:argType="string"
+            android:defaultValue="" />
+
+    </fragment>
 </navigation>

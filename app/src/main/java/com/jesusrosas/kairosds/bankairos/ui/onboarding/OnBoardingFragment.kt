@@ -15,9 +15,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.app.ActivityCompat
 import androidx.fragment.app.viewModels
+import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import com.google.android.gms.location.*
 import com.jesusrosas.kairosds.bankairos.PermissionRequester
+import com.jesusrosas.kairosds.bankairos.R
 import com.jesusrosas.kairosds.bankairos.databinding.OnBoardingFragmentBinding
 import com.jesusrosas.kairosds.bankairos.openAppSettings
 import com.jesusrosas.kairosds.bankairos.toast
@@ -54,7 +56,7 @@ class OnBoardingFragment : Fragment() {
         }
 
         viewModel.goToFormFragment.observe(viewLifecycleOwner){
-
+            findNavController().navigate(OnBoardingFragmentDirections.toBaseFormFragment(it!!))
         }
     }
 
