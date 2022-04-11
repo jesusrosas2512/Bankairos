@@ -1,4 +1,4 @@
-package com.jesusrosas.kairosds.bankairos
+package com.jesusrosas.kairosds.bankairos.ui.onboarding
 
 import android.Manifest
 import android.content.Context
@@ -13,11 +13,14 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import com.google.android.gms.location.*
+import com.jesusrosas.kairosds.bankairos.PermissionRequester
 import com.jesusrosas.kairosds.bankairos.databinding.OnBoardingFragmentBinding
+import com.jesusrosas.kairosds.bankairos.openAppSettings
+import com.jesusrosas.kairosds.bankairos.toast
 import java.util.*
 
 class OnBoardingFragment : Fragment() {
@@ -48,6 +51,10 @@ class OnBoardingFragment : Fragment() {
         finePermission.runWithPermission{
             mFusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(requireContext())
             readLocation()
+        }
+
+        viewModel.goToFormFragment.observe(viewLifecycleOwner){
+
         }
     }
 

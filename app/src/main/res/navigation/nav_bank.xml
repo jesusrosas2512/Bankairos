@@ -7,7 +7,16 @@
 
     <fragment
         android:id="@+id/onBoardingFragment"
-        android:name="com.jesusrosas.kairosds.bankairos.OnBoardingFragment"
+        android:name="com.jesusrosas.kairosds.bankairos.ui.onboarding.OnBoardingFragment"
         android:label="on_boarding_fragment"
-        tools:layout="@layout/on_boarding_fragment" />
+        tools:layout="@layout/on_boarding_fragment" >
+        <action
+            android:id="@+id/action_onBoardingFragment_to_baseFormFragment"
+            app:destination="@id/baseFormFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/baseFormFragment"
+        android:name="com.jesusrosas.kairosds.bankairos.ui.BaseFormFragment"
+        android:label="fragment_base_form"
+        tools:layout="@layout/fragment_base_form" />
 </navigation>
