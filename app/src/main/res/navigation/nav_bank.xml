@@ -12,7 +12,9 @@
         tools:layout="@layout/on_boarding_fragment" >
         <action
             android:id="@+id/to_baseFormFragment"
-            app:destination="@id/baseFormFragment">
+            app:destination="@id/baseFormFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:popEnterAnim="@anim/slide_in_left">
 
             <argument
                 android:name="formType"
@@ -30,6 +32,16 @@
             android:name="formType"
             app:argType="string"
             android:defaultValue="" />
+        <action
+            android:id="@+id/to_accountFragment"
+            app:destination="@id/accountFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:popEnterAnim="@anim/slide_in_left" />
 
     </fragment>
+    <fragment
+        android:id="@+id/accountFragment"
+        android:name="com.jesusrosas.kairosds.bankairos.ui.account.AccountFragment"
+        android:label="account_fragment"
+        tools:layout="@layout/account_fragment" />
 </navigation>

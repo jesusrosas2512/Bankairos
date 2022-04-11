@@ -55,7 +55,7 @@
             style="@style/TextAppearance.MaterialComponents.Headline5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            tools:text="@{vm.text}"
+            android:text="@{vm.text}"
             android:layout_marginBottom="64dp"
             app:layout_constraintBottom_toTopOf="@id/glHorizontal"
             app:layout_constraintLeft_toLeftOf="parent"

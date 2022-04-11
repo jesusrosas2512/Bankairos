@@ -7,10 +7,12 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.jesusrosas.kairosds.bankairos.databinding.FragmentBaseFormBinding
 import com.jesusrosas.kairosds.bankairos.inflateView
 import com.jesusrosas.kairosds.bankairos.ui.login.viewmodel.BaseFormViewModel
+import com.jesusrosas.kairosds.bankairos.ui.onboarding.OnBoardingFragmentDirections
 
 class BaseFormFragment : Fragment() {
 
@@ -34,7 +36,7 @@ class BaseFormFragment : Fragment() {
 
         viewModel.tokenAccess.observe(viewLifecycleOwner) {
             Toast.makeText(context, it, Toast.LENGTH_LONG).show()
-
+            if (it != "error") findNavController().navigate(BaseFormFragmentDirections.toAccountFragment())
         }
 
         viewModel.isFormValid.observe(viewLifecycleOwner){
