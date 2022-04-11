@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
     <group android:id="@+id/primary">
         <item
-            android:id="@id/menuFragment"
+            android:id="@+id/menuFragment"
             android:icon="@drawable/ic__wallet"
             android:title="@string/my_accounts" />
         <item
-            android:id="@id/addCardFragment"
+            android:id="@+id/addCardFragment"
             android:icon="@drawable/ic_card"
             android:title="@string/add_card" />
     </group>
