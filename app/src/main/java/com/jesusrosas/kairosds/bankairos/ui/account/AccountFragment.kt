@@ -39,6 +39,8 @@ class AccountFragment : Fragment() {
                 view.findViewById<DrawerLayout>(R.id.drawer_layout)
             )
         )
+
+        viewModel.init()
     }
 
 }

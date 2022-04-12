@@ -28,7 +28,7 @@ class BaseFormViewModel : ViewModel() {
     private val _tokenAccess = MutableLiveData<String>()
     val tokenAccess: LiveData<String> get() = _tokenAccess
 
-    private val _isFormValid = MutableLiveData<Boolean>()
+    private val _isFormValid = MutableLiveData(false)
     val isFormValid: LiveData<Boolean> get() = _isFormValid
 
     fun changeForm(form: String){

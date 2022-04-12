@@ -17,7 +17,9 @@ import androidx.lifecycle.LifecycleOwner
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
 import com.jesusrosas.kairosds.bankairos.databinding.LoginLayoutBinding
+import com.jesusrosas.kairosds.bankairos.databinding.MyAccountsLayoutBinding
 import com.jesusrosas.kairosds.bankairos.databinding.RegisterLayoutBinding
+import com.jesusrosas.kairosds.bankairos.ui.account.AccountViewModel
 import com.jesusrosas.kairosds.bankairos.ui.login.viewmodel.BaseFormViewModel
 
 @BindingAdapter(value = ["inflateView", "vm"], requireAll = true)
@@ -35,6 +37,28 @@ fun FrameLayout.inflateView(inflateView: String?, vm: BaseFormViewModel) {
         else -> {
         }
     }
+}
+
+@BindingAdapter(value = ["inflateViewInfo", "vm"], requireAll = true)
+fun FrameLayout.inflateViewInfo(inflateView: String?, vm: AccountViewModel) {
+    removeAllViews()
+    when (inflateView) {
+        "Accounts" -> MyAccountsLayoutBinding.inflate(LayoutInflater.from(context), this, true).apply {
+            this.vm = vm
+            lifecycleOwner = this@inflateViewInfo.context.lifecycleOwner()
+        }
+//        "Registrar" -> RegisterLayoutBinding.inflate(LayoutInflater.from(context), this, true).apply {
+//            this.vm = vm
+//            lifecycleOwner = this@inflateViewInfo.context.lifecycleOwner()
+//        }
+        else -> {
+        }
+    }
+}
+
+@BindingAdapter("setVisible")
+fun View.setVisible(show: Boolean) {
+    visibility = if (show) View.VISIBLE else View.GONE
 }
 
 @BindingAdapter("onTextChanged")
