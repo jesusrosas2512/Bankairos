@@ -2,7 +2,7 @@
     <!-- Base application theme. -->
     <style name="Theme.Bankairos" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/white</item>
+        <item name="colorPrimary">@color/primaryColor</item>
         <item name="colorPrimaryVariant">@color/primaryDarkColor</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
@@ -44,7 +44,6 @@
         <item name="hintTextColor">@color/primaryColor</item>
         <item name="boxStrokeColor">@color/primaryColor</item>
         <item name="colorControlActivated">@color/primaryColor</item>
-        <item name="boxBackgroundColor">@color/white</item>
     </style>
 
     <style name="TextInputLayoutDense" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
@@ -52,6 +51,5 @@
         <item name="hintTextColor">@color/primaryColor</item>
         <item name="boxStrokeColor">@color/primaryColor</item>
         <item name="colorControlActivated">@color/primaryColor</item>
-        <item name="boxBackgroundColor">@color/white</item>
     </style>
 </resources>

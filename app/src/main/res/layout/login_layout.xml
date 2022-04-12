@@ -27,7 +27,7 @@
             app:endIconMode="clear_text"
             errorMessage="@{vm.emailError}"
             successStyle="@{SuccessStyles.Green}"
-            style="@style/TextInputLayout">
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etEmail"
@@ -48,7 +48,7 @@
             hideErrorIcon="@{true}"
             successStyle="@{SuccessStyles.Orange}"
             app:endIconMode="password_toggle"
-            style="@style/TextInputLayout">
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etPassword"
