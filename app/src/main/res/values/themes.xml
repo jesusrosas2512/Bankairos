@@ -39,17 +39,4 @@
         <item name="strokeColor">@color/button</item>
     </style>
 
-    <style name="TextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
-        <item name="android:textColorHint">@color/gray</item>
-        <item name="hintTextColor">@color/primaryColor</item>
-        <item name="boxStrokeColor">@color/primaryColor</item>
-        <item name="colorControlActivated">@color/primaryColor</item>
-    </style>
-
-    <style name="TextInputLayoutDense" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
-        <item name="android:textColorHint">@color/gray</item>
-        <item name="hintTextColor">@color/primaryColor</item>
-        <item name="boxStrokeColor">@color/primaryColor</item>
-        <item name="colorControlActivated">@color/primaryColor</item>
-    </style>
 </resources>
