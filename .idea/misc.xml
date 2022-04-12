@@ -3,15 +3,17 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Usuario/AndroidStudioProjects/Bankairos/app/src/main/res/drawable/button.xml" value="0.248" />
         <entry key="..\:/Users/Usuario/AndroidStudioProjects/Bankairos/app/src/main/res/drawable/ic__wallet.xml" value="0.2605" />
         <entry key="..\:/Users/Usuario/AndroidStudioProjects/Bankairos/app/src/main/res/drawable/ic_card.xml" value="0.2605" />
         <entry key="..\:/Users/Usuario/AndroidStudioProjects/Bankairos/app/src/main/res/drawable/ic_check.xml" value="0.248" />
         <entry key="..\:/Users/Usuario/AndroidStudioProjects/Bankairos/app/src/main/res/drawable/ic_exit.xml" value="0.2605" />
         <entry key="..\:/Users/Usuario/AndroidStudioProjects/Bankairos/app/src/main/res/drawable/ic_warning.xml" value="0.248" />
-        <entry key="..\:/Users/Usuario/AndroidStudioProjects/Bankairos/app/src/main/res/layout/account_fragment.xml" value="0.33" />
+        <entry key="..\:/Users/Usuario/AndroidStudioProjects/Bankairos/app/src/main/res/layout/account_fragment.xml" value="0.25" />
         <entry key="..\:/Users/Usuario/AndroidStudioProjects/Bankairos/app/src/main/res/layout/activity_main.xml" value="0.18070652173913043" />
         <entry key="..\:/Users/Usuario/AndroidStudioProjects/Bankairos/app/src/main/res/layout/app_bar_layotu.xml" value="0.3625" />
         <entry key="..\:/Users/Usuario/AndroidStudioProjects/Bankairos/app/src/main/res/layout/app_bar_layout.xml" value="0.20380434782608695" />
+        <entry key="..\:/Users/Usuario/AndroidStudioProjects/Bankairos/app/src/main/res/layout/drawer_layout.xml" value="0.18541666666666667" />
         <entry key="..\:/Users/Usuario/AndroidStudioProjects/Bankairos/app/src/main/res/layout/fragment_add_card.xml" value="0.18541666666666667" />
         <entry key="..\:/Users/Usuario/AndroidStudioProjects/Bankairos/app/src/main/res/layout/fragment_base.xml" value="0.3625" />
         <entry key="..\:/Users/Usuario/AndroidStudioProjects/Bankairos/app/src/main/res/layout/fragment_base_form.xml" value="0.22" />
