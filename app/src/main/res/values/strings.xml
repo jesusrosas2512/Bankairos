@@ -35,5 +35,5 @@
     <string name="register_login">Ingresar</string>
     <string name="onBoarding_welcome">Bienvenido</string>
     <string name="register_btn">Registrar</string>
-    <string name="nav_header_welcome">Bienvenido: @string/nav_header_title</string>
+    <string name="nav_header_welcome">Bienvenido: Jesus Rosas</string>
 </resources>
