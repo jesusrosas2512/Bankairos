@@ -12,8 +12,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/light_gray">
+        android:layout_height="match_parent">
 
         <ImageView
             android:id="@+id/ivLogo"
@@ -32,7 +31,8 @@
             android:layout_height="0dp"
             inflateView="@{vm.frame}"
             vm="@{vm}"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="@dimen/common_default"
+            android:layout_marginBottom="@dimen/common_min"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/ivLogo"
@@ -44,10 +44,11 @@
             android:id="@+id/btnLogin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/common_default"
+            android:layout_marginHorizontal="@dimen/common_default"
+            android:layout_marginVertical="24dp"
             android:text="@{vm.frame}"
             android:enabled="@{vm.isFormValid}"
-            android:textAllCaps="false"
+            style="@style/OutlinedButton"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent" />

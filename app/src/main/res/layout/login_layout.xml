@@ -27,11 +27,11 @@
             app:endIconMode="clear_text"
             errorMessage="@{vm.emailError}"
             successStyle="@{SuccessStyles.Green}"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+            style="@style/TextInputLayout">
 
             <com.google.android.material.textfield.TextInputEditText
-                onTextChanged="@{(value) -> vm.emailChanged(value)}"
                 android:id="@+id/etEmail"
+                onTextChanged="@{(value) -> vm.emailChanged(value)}"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textEmailAddress"/>
@@ -48,7 +48,7 @@
             hideErrorIcon="@{true}"
             successStyle="@{SuccessStyles.Orange}"
             app:endIconMode="password_toggle"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+            style="@style/TextInputLayout">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etPassword"

@@ -21,7 +21,7 @@
             android:layout_height="wrap_content"
             android:hint="@string/login_name"
             app:endIconMode="clear_text"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+            style="@style/TextInputLayoutDense">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etName"
@@ -38,7 +38,7 @@
             android:layout_marginTop="@dimen/common_default"
             android:hint="@string/login_last_names"
             app:endIconMode="clear_text"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+            style="@style/TextInputLayoutDense">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etLastName"
@@ -55,7 +55,7 @@
             android:layout_marginTop="@dimen/common_default"
             android:hint="@string/login_email"
             app:endIconMode="clear_text"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+            style="@style/TextInputLayoutDense">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etEmail"
@@ -72,7 +72,7 @@
             android:layout_marginTop="@dimen/common_default"
             android:hint="@string/login_password"
             app:endIconMode="password_toggle"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+            style="@style/TextInputLayoutDense">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etPassword"
@@ -89,7 +89,7 @@
             android:layout_marginTop="@dimen/common_default"
             android:hint="@string/login_password"
             app:endIconMode="password_toggle"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+            style="@style/TextInputLayoutDense">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etConfirmPass"
