@@ -36,8 +36,6 @@ class MenuFragment : Fragment() {
             )
         )
 
-        toolbar.title = getString(R.string.my_accounts)
-
     }
 
 //    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {

@@ -22,4 +22,5 @@
     <string name="my_accounts">Mis cuentas</string>
     <string name="exit">Cerrar sesión</string>
     <string name="add_card">Solicitar tarjeta</string>
+    <string name="nav_header_welcome">Benvenido: Jesus Rosas</string>
 </resources>
