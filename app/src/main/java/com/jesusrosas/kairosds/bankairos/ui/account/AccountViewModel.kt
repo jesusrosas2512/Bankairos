@@ -21,14 +21,21 @@ class AccountViewModel : ViewModel() {
     private val _isMsgVisible = MutableLiveData(false)
     val isMsgVisible: LiveData<Boolean> get() = _isMsgVisible
 
+    private val _cardList = MutableLiveData<List<CardItem>>()
+    val cardList: LiveData<List<CardItem>> get() = _cardList
+    private val _isLoading = MutableLiveData<Boolean>()
+    val isLoading: LiveData<Boolean> get() = _isLoading
+
     fun init() {
+        _isLoading.value = true
         viewModelScope.launch {
             val result = getCardsUseCase()
             for (element in result.cards){
                 if (element.name == "Error") _isMsgVisible.value = true
-                else Log.i("Debug", "${element.name} - ${element.type}")
-            }
-        }
+                else _cardList.value = result.cards
 
+            }
+            _isLoading.value = false
+        }
     }
 }

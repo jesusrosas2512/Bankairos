@@ -84,7 +84,6 @@ class OnBoardingFragment : Fragment() {
                             )
                         }
                     } else {
-                        Log.i("Location", "Lat: ${location.latitude} Lon: ${location.longitude}")
                         viewModel.setLocation(getCityName(location))
                     }
                 }
@@ -95,7 +94,6 @@ class OnBoardingFragment : Fragment() {
     private val locationCallback = object : LocationCallback(){
         override fun onLocationResult(locationResult: LocationResult) {
             val lastLocation: Location = locationResult.lastLocation
-            Log.d("Debug:","your last last location: "+ lastLocation.longitude.toString())
             viewModel.setLocation(getCityName(lastLocation))
         }
     }
@@ -113,7 +111,6 @@ class OnBoardingFragment : Fragment() {
 
         val cityName = address[0].locality
         val countryName = address[0].countryName
-        Log.d("Debug:", "Your City: $cityName ; your Country $countryName")
 
         return "$cityName, $countryName"
     }

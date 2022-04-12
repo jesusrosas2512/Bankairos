@@ -14,12 +14,15 @@ import androidx.core.view.isVisible
 import androidx.core.widget.doOnTextChanged
 import androidx.databinding.BindingAdapter
 import androidx.lifecycle.LifecycleOwner
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
 import com.jesusrosas.kairosds.bankairos.databinding.LoginLayoutBinding
 import com.jesusrosas.kairosds.bankairos.databinding.MyAccountsLayoutBinding
 import com.jesusrosas.kairosds.bankairos.databinding.RegisterLayoutBinding
 import com.jesusrosas.kairosds.bankairos.ui.account.AccountViewModel
+import com.jesusrosas.kairosds.bankairos.ui.account.CardItem
 import com.jesusrosas.kairosds.bankairos.ui.login.viewmodel.BaseFormViewModel
 
 @BindingAdapter(value = ["inflateView", "vm"], requireAll = true)
@@ -68,11 +71,6 @@ fun TextInputEditText.onTextChanged(onTextChanged: OnTextChanged) {
     }
 }
 
-interface OnTextChanged {
-
-    fun onChanged(text: String?)
-}
-
 @BindingAdapter(
     value = ["errorMessage", "successStyle", "hideErrorIcon", "hideMessage", "errorColorIcon"],
     requireAll = false
@@ -110,6 +108,27 @@ fun TextInputLayout.setErrorSuccess(
             }
         }
     }
+}
+
+@BindingAdapter(
+    value = ["cardList", "isLoading"],
+    requireAll =
+    true
+)
+fun RecyclerView.setCardAdapter(
+    cardList: List<CardItem>?,
+    isLoading: Boolean
+) {
+    if (adapter == null) {
+        layoutManager = GridLayoutManager(context, 1)
+        adapter = CardAdapter()
+    }
+    (adapter as? CardAdapter)?.set(isLoading, cardList)
+}
+
+interface OnTextChanged {
+
+    fun onChanged(text: String?)
 }
 
 fun TextInputLayout.setEndIconCheck() {

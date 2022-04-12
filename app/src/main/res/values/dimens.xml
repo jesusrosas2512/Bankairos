@@ -3,6 +3,7 @@
     <dimen name="common_min">8dp</dimen>
     <dimen name="common_default">16dp</dimen>
     <dimen name="common_middle">24dp</dimen>
+    <dimen name="common_big">48dp</dimen>
     <dimen name="nav_header_height">128dp</dimen>
 
     <dimen name="text_line_spacing_extra">2sp</dimen>
