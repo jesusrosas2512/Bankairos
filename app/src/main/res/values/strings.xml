@@ -16,7 +16,6 @@
 
     <string name="error_empty_field">Campo vacío</string>
     <string name="password_does_not_mach">Contraseña no coincide</string>
-    <string name="invalid_password">Contraseña incorrecta</string>
     <string name="email_error">Introduzca correo válido</string>
     <string name="password_login_error">Contraseña incorrecta, intenta de nuevo</string>
     <string name="email_login_error">Correo incorrecto, intenta de nuevo</string>
@@ -26,13 +25,15 @@
     <string name="login_register">Registrar</string>
     <string name="login_go_to">Ir a</string>
     <string name="login_btn">Ingresar</string>
-    <string name="login_name">Nombre(s)</string>
-    <string name="login_last_names">Apellidos</string>
     <string name="login_link">Ingresa con otra cuenta</string>
     <string name="login_link_register">Regístrate</string>
     <string name="login_question">¿Aún no te registras?</string>
     <string name="register_question">¿Ya tienes una cuenta?</string>
     <string name="register_login">Ingresar</string>
+    <string name="register_name">Nombre(s)</string>
+    <string name="register_password">Contraseña</string>
+    <string name="register_confirm_password">Confirmar contraseña</string>
+    <string name="register_last_names">Apellidos</string>
     <string name="onBoarding_welcome">Bienvenido</string>
     <string name="register_btn">Registrar</string>
     <string name="nav_header_welcome">Bienvenido: Jesus Rosas</string>

@@ -1,13 +1,11 @@
-package com.jesusrosas.kairosds.bankairos
+package com.jesusrosas.kairosds.bankairos.ui.account
 
 import android.content.Context
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.ViewDataBinding
 import androidx.recyclerview.widget.RecyclerView
 import com.jesusrosas.kairosds.bankairos.databinding.ItemCardBinding
-import com.jesusrosas.kairosds.bankairos.ui.account.CardItem
 
 class CardAdapter : RecyclerView.Adapter<CardViewHolder>() {
     private lateinit var mContext: Context

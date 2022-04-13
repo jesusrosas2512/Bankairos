@@ -1,4 +1,4 @@
-package com.jesusrosas.kairosds.bankairos
+package com.jesusrosas.kairosds.bankairos.ui.onboarding
 
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.Fragment

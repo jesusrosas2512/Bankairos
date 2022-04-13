@@ -24,7 +24,7 @@
     </fragment>
     <fragment
         android:id="@+id/baseFormFragment"
-        android:name="com.jesusrosas.kairosds.bankairos.ui.login.BaseFormFragment"
+        android:name="com.jesusrosas.kairosds.bankairos.ui.baseform.fragment.BaseFormFragment"
         android:label="fragment_base_form"
         tools:layout="@layout/fragment_base_form">
 

@@ -1,10 +1,12 @@
 package com.jesusrosas.kairosds.bankairos.data.network
 
-import com.jesusrosas.kairosds.bankairos.ui.login.entities.Login
+import com.jesusrosas.kairosds.bankairos.ui.baseform.login.entities.Login
 import com.jesusrosas.kairosds.bankairos.core.RetrofitHelper
+import com.jesusrosas.kairosds.bankairos.data.model.Success
 import com.jesusrosas.kairosds.bankairos.data.model.Token
 import com.jesusrosas.kairosds.bankairos.ui.account.CardItem
 import com.jesusrosas.kairosds.bankairos.ui.account.CardResponse
+import com.jesusrosas.kairosds.bankairos.ui.baseform.register.Register
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
@@ -17,6 +19,14 @@ class KairosService {
 
         val response = retrofit.create(KairosApiClient::class.java).getToken(login)
         response.body() ?: Token("error")
+        }
+    }
+
+    suspend fun createUser(register: Register): Success {
+        return withContext(Dispatchers.IO){
+
+            val response = retrofit.create(KairosApiClient::class.java).createUser(register)
+            response.body() ?: Success("error")
         }
     }
 

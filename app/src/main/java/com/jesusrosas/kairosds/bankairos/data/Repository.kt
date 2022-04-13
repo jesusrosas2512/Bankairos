@@ -1,11 +1,12 @@
 package com.jesusrosas.kairosds.bankairos.data
 
-import com.jesusrosas.kairosds.bankairos.ui.login.entities.Login
+import com.jesusrosas.kairosds.bankairos.data.model.Success
+import com.jesusrosas.kairosds.bankairos.ui.baseform.login.entities.Login
 import com.jesusrosas.kairosds.bankairos.data.model.Token
 import com.jesusrosas.kairosds.bankairos.data.model.TokenProvider
 import com.jesusrosas.kairosds.bankairos.data.network.KairosService
 import com.jesusrosas.kairosds.bankairos.ui.account.CardResponse
-import retrofit2.Response
+import com.jesusrosas.kairosds.bankairos.ui.baseform.register.Register
 
 class Repository {
 
@@ -15,6 +16,10 @@ class Repository {
         val response = api.getToken(login)
         TokenProvider.token = response
         return response
+    }
+
+    suspend fun createUser(register: Register): Success {
+        return api.createUser(register)
     }
 
     suspend fun getCards(): CardResponse {

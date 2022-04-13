@@ -1,4 +1,4 @@
-package com.jesusrosas.kairosds.bankairos.ui.login
+package com.jesusrosas.kairosds.bankairos.ui.baseform.fragment
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -10,7 +10,7 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.jesusrosas.kairosds.bankairos.databinding.FragmentBaseFormBinding
-import com.jesusrosas.kairosds.bankairos.ui.login.viewmodel.BaseFormViewModel
+import com.jesusrosas.kairosds.bankairos.ui.baseform.viewmodel.BaseFormViewModel
 
 class BaseFormFragment : Fragment() {
 

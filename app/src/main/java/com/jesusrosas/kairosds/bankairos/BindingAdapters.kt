@@ -22,8 +22,12 @@ import com.jesusrosas.kairosds.bankairos.databinding.LoginLayoutBinding
 import com.jesusrosas.kairosds.bankairos.databinding.MyAccountsLayoutBinding
 import com.jesusrosas.kairosds.bankairos.databinding.RegisterLayoutBinding
 import com.jesusrosas.kairosds.bankairos.ui.account.AccountViewModel
+import com.jesusrosas.kairosds.bankairos.ui.account.CardAdapter
 import com.jesusrosas.kairosds.bankairos.ui.account.CardItem
-import com.jesusrosas.kairosds.bankairos.ui.login.viewmodel.BaseFormViewModel
+import com.jesusrosas.kairosds.bankairos.ui.baseform.ErrorMessage
+import com.jesusrosas.kairosds.bankairos.ui.baseform.Event
+import com.jesusrosas.kairosds.bankairos.ui.baseform.SuccessStyles
+import com.jesusrosas.kairosds.bankairos.ui.baseform.viewmodel.BaseFormViewModel
 
 @BindingAdapter(value = ["inflateView", "vm"], requireAll = true)
 fun FrameLayout.inflateView(inflateView: String?, vm: BaseFormViewModel) {
@@ -115,6 +119,7 @@ fun TextInputLayout.setErrorSuccess(
     requireAll =
     true
 )
+
 fun RecyclerView.setCardAdapter(
     cardList: List<CardItem>?,
     isLoading: Boolean
@@ -131,6 +136,19 @@ interface OnTextChanged {
     fun onChanged(text: String?)
 }
 
+/*@BindingAdapter("onAfterChange")
+fun EditText.onAfterChange(onTextChanged: AddTextChanged) {
+    addTextChangedListener {
+        onTextChanged.onChange()
+    }
+}
+
+interface AddTextChanged {
+
+    fun onChange()
+}*/
+
+
 fun TextInputLayout.setEndIconCheck() {
     if (editText is TextInputEditText) {
         endIconMode = TextInputLayout.END_ICON_CUSTOM
@@ -146,7 +164,7 @@ fun TextInputLayout.setOrangeStyle() {
     )
     val colorsStroke = intArrayOf(
         getColor(context, R.color.primaryLightColor),
-        getColor(context, R.color.primaryDarkColor)
+        getColor(context, R.color.primaryColor)
     )
     setBoxStrokeColorStateList(ColorStateList(statesStroke, colorsStroke))
     val stateIcon = arrayOf(
@@ -157,7 +175,7 @@ fun TextInputLayout.setOrangeStyle() {
     val colorIcon = intArrayOf(
         getColor(context, R.color.primaryLightColor),
         getColor(context, R.color.primaryLightColor),
-        getColor(context, R.color.primaryDarkColor)
+        getColor(context, R.color.primaryColor)
     )
 
     setEndIconTintList(ColorStateList(stateIcon, colorIcon))
@@ -169,7 +187,7 @@ fun TextInputLayout.setOrangeStyle() {
     val colorHint = intArrayOf(
         getColor(context, R.color.primaryLightColor),
         getColor(context, R.color.primaryLightColor),
-        getColor(context, R.color.primaryDarkColor)
+        getColor(context, R.color.primaryColor)
     )
 
     defaultHintTextColor = ColorStateList(stateHint, colorHint)

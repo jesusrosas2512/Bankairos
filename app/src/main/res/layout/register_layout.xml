@@ -5,7 +5,9 @@
     <data>
         <variable
             name="vm"
-            type="com.jesusrosas.kairosds.bankairos.ui.login.viewmodel.BaseFormViewModel" />
+            type="com.jesusrosas.kairosds.bankairos.ui.baseform.viewmodel.BaseFormViewModel" />
+
+        <import type="com.jesusrosas.kairosds.bankairos.ui.baseform.SuccessStyles" />
     </data>
 
     <LinearLayout
@@ -19,15 +21,19 @@
             android:id="@+id/tilName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/login_name"
+            android:hint="@string/register_name"
+            errorMessage="@{vm.nameRegError}"
+            successStyle="@{SuccessStyles.Green}"
             app:endIconMode="clear_text"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etName"
+                android:text="@={vm.nameReg}"
+                onTextChanged="@{(value) -> vm.nameRegChanged(value)}"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textPersonName"/>
+                android:inputType="textCapWords"/>
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -36,15 +42,19 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/common_default"
-            android:hint="@string/login_last_names"
+            android:hint="@string/register_last_names"
+            errorMessage="@{vm.lastNameRegError}"
+            successStyle="@{SuccessStyles.Green}"
             app:endIconMode="clear_text"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etLastName"
+                android:text="@={vm.lastNameReg}"
+                onTextChanged="@{(value) -> vm.lastNameRegChanged(value)}"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textPersonName"/>
+                android:inputType="textCapWords"/>
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -55,10 +65,14 @@
             android:layout_marginTop="@dimen/common_default"
             android:hint="@string/login_email"
             app:endIconMode="clear_text"
+            errorMessage="@{vm.emailRegError}"
+            successStyle="@{SuccessStyles.Green}"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etEmail"
+                android:text="@={vm.emailReg}"
+                onTextChanged="@{(value) -> vm.emailRegChanged(value)}"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textEmailAddress"/>
@@ -70,7 +84,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/common_default"
-            android:hint="@string/login_password"
+            android:hint="@string/register_password"
+            errorMessage="@{vm.passwordRegError}"
+            hideErrorIcon="@{true}"
+            successStyle="@{SuccessStyles.Orange}"
             app:endIconMode="password_toggle"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
 
@@ -78,6 +95,8 @@
                 android:id="@+id/etPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                onTextChanged="@{(value) -> vm.passwordRegChanged(value)}"
+                android:text="@={vm.passwordReg}"
                 android:inputType="textPassword"/>
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -87,7 +106,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/common_default"
-            android:hint="@string/login_password"
+            android:hint="@string/register_confirm_password"
+            errorMessage="@{vm.confirmPassRegError}"
+            hideErrorIcon="@{true}"
+            successStyle="@{SuccessStyles.Orange}"
             app:endIconMode="password_toggle"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
 
@@ -95,6 +117,8 @@
                 android:id="@+id/etConfirmPass"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                onTextChanged="@{(value) -> vm.confirmPassRegChanged(value)}"
+                android:text="@={vm.confirmPassReg}"
                 android:inputType="textPassword"/>
 
         </com.google.android.material.textfield.TextInputLayout>

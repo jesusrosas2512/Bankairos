@@ -1,4 +1,4 @@
-package com.jesusrosas.kairosds.bankairos
+package com.jesusrosas.kairosds.bankairos.ui.baseform
 
 class ValidationRules {
     fun isEmailValid(value: String) =
