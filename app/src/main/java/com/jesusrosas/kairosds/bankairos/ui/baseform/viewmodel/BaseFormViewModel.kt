@@ -62,7 +62,8 @@ class BaseFormViewModel : ViewModel() {
         viewModelScope.launch {
             val loginRequest = Login(email.value.toString(), password.value.toString())
             val result = accessUseCase(loginRequest)
-            _tokenAccess.value = result.token
+            _tokenAccess.value = if (result.token != "error") "Acceso exitoso"
+            else result.token
         }
 
     }

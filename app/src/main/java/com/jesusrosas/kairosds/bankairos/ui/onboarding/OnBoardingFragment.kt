@@ -16,6 +16,7 @@ import androidx.core.app.ActivityCompat
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.google.android.gms.location.*
+import com.jesusrosas.kairosds.bankairos.data.model.LocationProvider
 import com.jesusrosas.kairosds.bankairos.databinding.OnBoardingFragmentBinding
 import com.jesusrosas.kairosds.bankairos.openAppSettings
 import com.jesusrosas.kairosds.bankairos.toast
@@ -108,7 +109,10 @@ class OnBoardingFragment : Fragment() {
         val cityName = address[0].locality
         val countryName = address[0].countryName
 
-        return "$cityName, $countryName"
+        val cityAndCountry = "$cityName, $countryName"
+        LocationProvider.location = cityAndCountry
+
+        return cityAndCountry
     }
 
 }

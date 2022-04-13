@@ -1,6 +1,7 @@
 package com.jesusrosas.kairosds.bankairos.ui.account
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -12,6 +13,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupWithNavController
 import com.jesusrosas.kairosds.bankairos.R
+import com.jesusrosas.kairosds.bankairos.data.model.TokenProvider
 import com.jesusrosas.kairosds.bankairos.databinding.AccountFragmentBinding
 
 class AccountFragment : Fragment() {
@@ -39,6 +41,8 @@ class AccountFragment : Fragment() {
                 view.findViewById<DrawerLayout>(R.id.drawer_layout)
             )
         )
+
+        Log.i("Debug", "${TokenProvider.token.token}")
 
         viewModel.init()
     }

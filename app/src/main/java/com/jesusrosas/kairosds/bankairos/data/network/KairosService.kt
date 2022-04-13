@@ -13,6 +13,7 @@ import kotlinx.coroutines.withContext
 class KairosService {
 
     private val retrofit = RetrofitHelper.getRetrofit()
+    private val retrofitIntercepted = RetrofitHelper.getRetrofitIntercepted()
 
     suspend fun getToken(login: Login): Token{
         return withContext(Dispatchers.IO){
@@ -33,7 +34,7 @@ class KairosService {
     suspend fun getCards(): CardResponse{
         return withContext(Dispatchers.IO){
 
-            val response = retrofit.create(KairosApiClient::class.java).getCards()
+            val response = retrofitIntercepted.create(KairosApiClient::class.java).getCards()
             response.body() ?: CardResponse(listOf(CardItem("623bb8c115aaa50016f731ca","Error","TDC","623bb39515aaa50016f731c9",0,0,0)))
         }
     }
