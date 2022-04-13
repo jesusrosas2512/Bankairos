@@ -1,6 +1,7 @@
 package com.jesusrosas.kairosds.bankairos.ui.baseform.viewmodel
 
 import androidx.lifecycle.*
+import com.jesusrosas.kairosds.bankairos.UserMapper
 import com.jesusrosas.kairosds.bankairos.ui.baseform.ErrorMessage
 import com.jesusrosas.kairosds.bankairos.ui.baseform.Event
 import com.jesusrosas.kairosds.bankairos.ui.baseform.ValidationRules
@@ -12,6 +13,7 @@ import kotlinx.coroutines.launch
 class BaseFormViewModel : ViewModel() {
     val accessUseCase = AccessUseCase()
     private val validationRules = ValidationRules()
+    private val userMapper = UserMapper()
 
     private val _frame = MutableLiveData("login")
     val frame: LiveData<String> get() = _frame
@@ -62,8 +64,12 @@ class BaseFormViewModel : ViewModel() {
         viewModelScope.launch {
             val loginRequest = Login(email.value.toString(), password.value.toString())
             val result = accessUseCase(loginRequest)
-            _tokenAccess.value = if (result.token != "error") "Acceso exitoso"
-            else result.token
+            val token = result.token
+            _tokenAccess.value = if (token != "error") {
+                userMapper.tokenToUserMapper(token)
+                "Acceso exitoso"
+            }
+            else token
         }
 
     }

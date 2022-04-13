@@ -34,8 +34,7 @@
     <string name="register_password">Contraseña</string>
     <string name="register_confirm_password">Confirmar contraseña</string>
     <string name="register_last_names">Apellidos</string>
-    <string name="onBoarding_welcome">Bienvenido</string>
     <string name="register_btn">Registrar</string>
-    <string name="nav_header_welcome">Bienvenido: Jesus Rosas</string>
+    <string name="nav_header_welcome">Bienvenido: %s</string>
     <string name="no_cards_msg">No hay tarjetas registradas</string>
 </resources>

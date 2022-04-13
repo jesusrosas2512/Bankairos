@@ -21,7 +21,30 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <include layout="@layout/app_bar_layout" />
+            <com.google.android.material.appbar.AppBarLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    android:background="@color/white"
+                    app:titleTextColor="@color/white"
+                    app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+                    <TextView
+                        android:id="@+id/tvHeaderEmail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/common_default"
+                        android:text="@{@string/nav_header_welcome(vm.name)}"
+                        android:textColor="@color/primaryTextColor"
+                        android:layout_gravity="end" />
+
+                </androidx.appcompat.widget.Toolbar>
+
+            </com.google.android.material.appbar.AppBarLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -44,7 +67,7 @@
                     android:id="@+id/tvEmail"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/nav_header_subtitle"
+                    android:text="@{vm.email}"
                     android:layout_marginHorizontal="@dimen/common_default"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
