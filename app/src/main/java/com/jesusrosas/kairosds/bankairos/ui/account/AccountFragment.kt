@@ -53,6 +53,10 @@ class AccountFragment : Fragment(), NavigationView.OnNavigationItemSelectedListe
         navigationView.setNavigationItemSelectedListener(this)
 
         viewModel.changeView("Accounts")
+
+        viewModel.newCardSuccess.observe(viewLifecycleOwner){
+            activity?.toast(it)
+        }
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {

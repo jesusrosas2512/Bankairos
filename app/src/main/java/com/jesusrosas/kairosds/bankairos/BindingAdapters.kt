@@ -106,11 +106,10 @@ fun TextInputLayout.setErrorSuccess(
                 SuccessStyles.None -> {
                 }
                 SuccessStyles.Orange -> {
-                    setOrangeStyle()
+                    setOrangeStyle(R.color.primaryColor)
                 }
                 else -> {
-                    setGreenStyle()
-                    setEndIconCheck()
+                    setOrangeStyle(R.color.green)
                 }
             }
         }
@@ -169,14 +168,14 @@ interface AddTextChanged {
 }*/
 
 
-fun TextInputLayout.setEndIconCheck() {
+/*fun TextInputLayout.setEndIconCheck() {
     if (editText is TextInputEditText) {
         endIconMode = TextInputLayout.END_ICON_CUSTOM
     }
     endIconDrawable = ContextCompat.getDrawable(context, R.drawable.ic_check)
-}
+}*/
 
-fun TextInputLayout.setOrangeStyle() {
+fun TextInputLayout.setOrangeStyle(color: Int) {
 
     val statesStroke = arrayOf(
         intArrayOf(android.R.attr.state_focused),
@@ -184,7 +183,7 @@ fun TextInputLayout.setOrangeStyle() {
     )
     val colorsStroke = intArrayOf(
         getColor(context, R.color.primaryLightColor),
-        getColor(context, R.color.primaryColor)
+        getColor(context, color)
     )
     setBoxStrokeColorStateList(ColorStateList(statesStroke, colorsStroke))
     val stateIcon = arrayOf(
@@ -195,7 +194,7 @@ fun TextInputLayout.setOrangeStyle() {
     val colorIcon = intArrayOf(
         getColor(context, R.color.primaryLightColor),
         getColor(context, R.color.primaryLightColor),
-        getColor(context, R.color.primaryColor)
+        getColor(context, color)
     )
 
     setEndIconTintList(ColorStateList(stateIcon, colorIcon))
@@ -207,54 +206,7 @@ fun TextInputLayout.setOrangeStyle() {
     val colorHint = intArrayOf(
         getColor(context, R.color.primaryLightColor),
         getColor(context, R.color.primaryLightColor),
-        getColor(context, R.color.primaryColor)
-    )
-
-    defaultHintTextColor = ColorStateList(stateHint, colorHint)
-    val stateText = arrayOf(
-        intArrayOf(-android.R.attr.state_enabled),
-        intArrayOf()
-    )
-    val colorText = intArrayOf(
-        getColor(context, R.color.primaryDarkColor),
-        getColor(context, R.color.primaryDarkColor)
-    )
-
-    editText?.setTextColor(ColorStateList(stateText, colorText))
-}
-
-fun TextInputLayout.setGreenStyle() {
-    val statesStroke = arrayOf(
-        intArrayOf(android.R.attr.state_focused),
-        intArrayOf()
-    )
-    val colorsStroke = intArrayOf(
-        getColor(context, R.color.primaryLightColor),
-        getColor(context, R.color.green)
-    )
-
-    setBoxStrokeColorStateList(ColorStateList(statesStroke, colorsStroke))
-    val stateIcon = arrayOf(
-        intArrayOf(android.R.attr.state_activated),
-        intArrayOf(android.R.attr.state_focused),
-        intArrayOf()
-    )
-    val colorIcon = intArrayOf(
-        getColor(context, R.color.primaryLightColor),
-        getColor(context, R.color.primaryLightColor),
-        getColor(context, R.color.green)
-    )
-
-    setEndIconTintList(ColorStateList(stateIcon, colorIcon))
-    val stateHint = arrayOf(
-        intArrayOf(android.R.attr.state_focused),
-        intArrayOf(-android.R.attr.state_enabled),
-        intArrayOf()
-    )
-    val colorHint = intArrayOf(
-        getColor(context, R.color.primaryLightColor),
-        getColor(context, R.color.primaryLightColor),
-        getColor(context, R.color.green)
+        getColor(context, color)
     )
 
     defaultHintTextColor = ColorStateList(stateHint, colorHint)

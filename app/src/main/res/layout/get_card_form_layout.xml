@@ -63,6 +63,7 @@
             android:layout_marginHorizontal="@dimen/common_default"
             android:text="@string/request_card"
             android:enabled="@{vm.isBtnEnabled}"
+            android:onClick="@{() -> vm.btnRequestClicked()}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             style="@style/OutlinedButton" />

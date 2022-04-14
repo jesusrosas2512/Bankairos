@@ -81,7 +81,18 @@ class BaseFormViewModel : ViewModel() {
                 lastNameReg.value.toString(),
                 passwordReg.value.toString(),)
             val result = accessUseCase(registerRequest)
-            _tokenAccess.value = result.success
+
+            if (result.success != "error" ){
+
+                val loginRequest = Login(emailReg.value.toString(), passwordReg.value.toString())
+                val resultAuth = accessUseCase(loginRequest)
+                val token = resultAuth.token
+                _tokenAccess.value = if (token != "error") {
+                    userMapper.tokenToUserMapper(token)
+                    "Registro exitoso"
+                }
+                else token
+            }
         }
     }
 

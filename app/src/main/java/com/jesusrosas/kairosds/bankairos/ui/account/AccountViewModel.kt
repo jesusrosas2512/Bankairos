@@ -1,5 +1,6 @@
 package com.jesusrosas.kairosds.bankairos.ui.account
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -16,8 +17,6 @@ class AccountViewModel : ViewModel(), OnCardOptionListener {
 
     private val getCardsUseCase = GetCardsUseCase()
     private val getCardTypesUseCase = GetCardTypesUseCase()
-
-    private val cardProvider = CardNamesProvider
 
     private val _title = MutableLiveData<String>()
     val title: LiveData<String> get() = _title
@@ -49,6 +48,9 @@ class AccountViewModel : ViewModel(), OnCardOptionListener {
     private val _selectedCard = MutableLiveData<String>()
     private val _selectedCardType = MutableLiveData<String>()
 
+    private val _newCardSuccess = MutableLiveData<String>()
+    val newCardSuccess: LiveData<String> get() = _newCardSuccess
+
     private val _cardList = MutableLiveData<List<CardItem>>()
     val cardList: LiveData<List<CardItem>> get() = _cardList
     private val _isLoading = MutableLiveData<Boolean>()
@@ -75,8 +77,11 @@ class AccountViewModel : ViewModel(), OnCardOptionListener {
             val cards = result.cards
             if (cards.isNotEmpty()) {
                 for (element in cards) {
-                    if (element.name == "Error") _isMsgVisible.value = true
-                    else _cardList.value = cards
+                    if (element.name == "") _isMsgVisible.value = true
+                    else {
+                        _isMsgVisible.value = false
+                        _cardList.value = cards
+                    }
 
                 }
             } else _isMsgVisible.value = true
@@ -86,7 +91,7 @@ class AccountViewModel : ViewModel(), OnCardOptionListener {
     }
 
     private fun initSelectCard() {
-        _cardOptions.value = cardProvider.getCardsList()
+        _cardOptions.value = CardNamesProvider.getCardsList()
 
         val listOfTypes = mutableListOf<String>()
 
@@ -116,6 +121,19 @@ class AccountViewModel : ViewModel(), OnCardOptionListener {
             _cardTypes.value?.get(position).orEmpty()
 
         validateForm()
+    }
+
+    fun btnRequestClicked(){
+        Log.i("Debug", "Requesting card")
+        viewModelScope.launch {
+            val newCard = NewCardItem(
+                UserProvider.user.id,
+                _selectedCardType.value.toString(),
+                _selectedCard.value.toString()
+            )
+            val result = getCardsUseCase(newCard)
+            _newCardSuccess.value = result.success
+        }
     }
 
     private fun validateForm() {

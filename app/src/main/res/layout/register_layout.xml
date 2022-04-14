@@ -107,6 +107,7 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:imeOptions="actionDone"
                 onTextChanged="@{(value) -> vm.confirmPassRegChanged(value)}"
                 android:text="@={vm.confirmPassReg}"
                 android:inputType="textPassword"/>
