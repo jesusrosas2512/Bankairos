@@ -139,16 +139,19 @@ interface OnTextChanged {
     fun onChanged(text: String?)
 }
 
-@BindingAdapter(value = ["options", "onItemClickListener"], requireAll = false)
+@BindingAdapter(value = ["options", "onItemClickListener", "function"], requireAll = false)
 fun AutoCompleteTextView.options(
     cardOptions: List<String>?,
-    onItemClickListener: OnCardOptionListener
+    onItemClickListener: OnCardOptionListener,
+    function: CardDropDownStyle
 ) {
     cardOptions?.let {
         setAdapter(DropDownAdapter(context, it))
         setOnItemClickListener { _, _, position, _ ->
             setText(cardOptions[position], false)
-            onItemClickListener.onCardOptionClicked(position)
+            if (function == CardDropDownStyle.Names){
+                onItemClickListener.onCardOptionClicked(position)
+            } else onItemClickListener.onCardTypeClicked(position)
         }
     }
 }

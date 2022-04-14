@@ -6,6 +6,8 @@
         <variable
             name="vm"
             type="com.jesusrosas.kairosds.bankairos.ui.account.AccountViewModel" />
+
+        <import type="com.jesusrosas.kairosds.bankairos.CardDropDownStyle" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -25,6 +27,7 @@
             <AutoCompleteTextView
                 options="@{vm.cardOptions}"
                 onItemClickListener="@{vm}"
+                function="@{CardDropDownStyle.Names}"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/select_card"
@@ -42,8 +45,9 @@
             app:layout_constraintStart_toStartOf="parent">
 
             <AutoCompleteTextView
-                options="@{vm.cardOptions}"
+                options="@{vm.cardTypes}"
                 onItemClickListener="@{vm}"
+                function="@{CardDropDownStyle.Types}"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/select_type_card"
@@ -58,6 +62,7 @@
             android:layout_marginVertical="@dimen/common_middle"
             android:layout_marginHorizontal="@dimen/common_default"
             android:text="@string/request_card"
+            android:enabled="@{vm.isBtnEnabled}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             style="@style/OutlinedButton" />

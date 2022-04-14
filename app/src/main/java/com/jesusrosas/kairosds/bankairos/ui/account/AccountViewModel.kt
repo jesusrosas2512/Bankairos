@@ -1,6 +1,5 @@
 package com.jesusrosas.kairosds.bankairos.ui.account
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -9,12 +8,15 @@ import com.jesusrosas.kairosds.bankairos.OnCardOptionListener
 import com.jesusrosas.kairosds.bankairos.data.model.CardNamesProvider
 import com.jesusrosas.kairosds.bankairos.data.model.LocationProvider
 import com.jesusrosas.kairosds.bankairos.data.model.UserProvider
+import com.jesusrosas.kairosds.bankairos.domain.GetCardTypesUseCase
 import com.jesusrosas.kairosds.bankairos.domain.GetCardsUseCase
 import kotlinx.coroutines.launch
 
 class AccountViewModel : ViewModel(), OnCardOptionListener {
 
     private val getCardsUseCase = GetCardsUseCase()
+    private val getCardTypesUseCase = GetCardTypesUseCase()
+
     private val cardProvider = CardNamesProvider
 
     private val _title = MutableLiveData<String>()
@@ -32,45 +34,27 @@ class AccountViewModel : ViewModel(), OnCardOptionListener {
     private val _location = MutableLiveData(LocationProvider.location)
     val location: LiveData<String> get() = _location
 
+    private val _isBtnEnabled = MutableLiveData(false)
+    val isBtnEnabled: LiveData<Boolean> get() = _isBtnEnabled
+
     private val _isMsgVisible = MutableLiveData(false)
     val isMsgVisible: LiveData<Boolean> get() = _isMsgVisible
 
     private val _cardOptions = MutableLiveData<List<String>>()
     val cardOptions: LiveData<List<String>> get() = _cardOptions
 
+    private val _cardTypes = MutableLiveData<List<String>>()
+    val cardTypes: LiveData<List<String>> get() = _cardTypes
+
     private val _selectedCard = MutableLiveData<String>()
+    private val _selectedCardType = MutableLiveData<String>()
 
     private val _cardList = MutableLiveData<List<CardItem>>()
     val cardList: LiveData<List<CardItem>> get() = _cardList
     private val _isLoading = MutableLiveData<Boolean>()
     val isLoading: LiveData<Boolean> get() = _isLoading
 
-    /*fun init(listCards: List<String>) {
-
-        if (_frame.value == "Accounts"){
-            _isLoading.value = true
-
-            viewModelScope.launch {
-                val result = getCardsUseCase()
-                if (result.cards.isNotEmpty()) {
-                    for (element in result.cards) {
-                        if (element.name == "Error") _isMsgVisible.value = true
-                        else _cardList.value = result.cards
-
-                    }
-                } else _isMsgVisible.value = true
-
-                _isLoading.value = false
-            }
-        } else {
-            _cardOptions.value = listCards
-        }
-
-        changeView(_frame.value.toString())
-
-    }*/
-
-    fun changeView(frameView: String){
+    fun changeView(frameView: String) {
 
         if (frameView == "Accounts"){
             _title.value = "Mis cuentas"
@@ -83,15 +67,16 @@ class AccountViewModel : ViewModel(), OnCardOptionListener {
         _frame.value = frameView
     }
 
-    fun initMyAccounts(){
+    private fun initMyAccounts() {
         _isLoading.value = true
 
         viewModelScope.launch {
             val result = getCardsUseCase()
-            if (result.cards.isNotEmpty()) {
-                for (element in result.cards) {
+            val cards = result.cards
+            if (cards.isNotEmpty()) {
+                for (element in cards) {
                     if (element.name == "Error") _isMsgVisible.value = true
-                    else _cardList.value = result.cards
+                    else _cardList.value = cards
 
                 }
             } else _isMsgVisible.value = true
@@ -100,14 +85,40 @@ class AccountViewModel : ViewModel(), OnCardOptionListener {
         }
     }
 
-    fun initSelectCard(){
+    private fun initSelectCard() {
         _cardOptions.value = cardProvider.getCardsList()
-        Log.i("Debug", "${_cardOptions.value}")
+
+        val listOfTypes = mutableListOf<String>()
+
+        viewModelScope.launch {
+            val result = getCardTypesUseCase()
+            val cardTypes = result.types.type_cards
+            if (cardTypes.isNotEmpty()) {
+                for (element in cardTypes) {
+                    if (element.name != ""){
+                        listOfTypes.add(element.type)
+                        _cardTypes.value = listOfTypes
+                    }
+                }
+            }
+        }
     }
 
     override fun onCardOptionClicked(position: Int) {
         _selectedCard.value =
             _cardOptions.value?.get(position).orEmpty()
 
+        validateForm()
+    }
+
+    override fun onCardTypeClicked(position: Int) {
+        _selectedCardType.value =
+            _cardTypes.value?.get(position).orEmpty()
+
+        validateForm()
+    }
+
+    private fun validateForm() {
+        _isBtnEnabled.value = (!_selectedCard.value.isNullOrEmpty() && !_selectedCardType.value.isNullOrEmpty())
     }
 }
