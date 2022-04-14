@@ -7,7 +7,8 @@
     <dimen name="common_middle">24dp</dimen>
     <dimen name="common_big">48dp</dimen>
     <dimen name="common_max">64dp</dimen>
-    <dimen name="nav_header_height">128dp</dimen>
+    <dimen name="nav_header_height">100dp</dimen>
+    <dimen name="nav_header_max_height">200dp</dimen>
 
     <dimen name="text_line_spacing_extra">2sp</dimen>
     <dimen name="text_tiny">11sp</dimen>
