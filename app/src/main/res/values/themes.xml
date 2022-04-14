@@ -32,10 +32,9 @@
     <style name="OutlinedButton" parent="Widget.MaterialComponents.Button.OutlinedButton">
         <item name="android:textAllCaps">false</item>
         <item name="android:textColor">@color/button</item>
-        <item name="android:textSize">@dimen/text_small</item>
+        <item name="android:textSize">@dimen/text_medium</item>
         <item name="android:textStyle">bold</item>
         <item name="android:letterSpacing">@dimen/letter_spacing_button</item>
-        <item name="android:fontFamily">sans-serif</item>
         <item name="strokeColor">@color/button</item>
     </style>
 

@@ -2,14 +2,13 @@
     <string name="app_name">Bankairos</string>
     <string name="nav_header_title">Jesus Rosas</string>
     <string name="nav_header_subtitle">jesusrosas@kairosds.com</string>
-    <string name="nav_header_desc">Cabecera de navehación</string>
+    <string name="nav_header_desc">Cabecera de navegación</string>
     <string name="action_settings">Configuraciones</string>
 
     <string name="menu_wallet">Mis cuentas</string>
     <string name="menu_add_card">Solicitar tarjeta</string>
     <string name="menu_exit">Cerrar sesión</string>
     <string name="location">Ciudad de México, Venustiano Carranza</string>
-    <string name="premium_card">Tarjeta premium</string>
     <string name="tdc">TDC</string>
     <string name="type_card">Tarjeta</string>
     <string name="type">Tipo</string>
@@ -37,4 +36,11 @@
     <string name="register_btn">Registrar</string>
     <string name="nav_header_welcome">Bienvenido: %s</string>
     <string name="no_cards_msg">No hay tarjetas registradas</string>
+    <string name="select_card">Selecciona tarjeta…</string>
+    <string name="select_type_card">Selecciona tipo de tarjeta…</string>
+
+    <string name="options_gold_card">Tarjeta oro</string>
+    <string name="premium_card">Tarjeta premium</string>
+    <string name="options_black_card">Tarjeta black</string>
+    <string name="request_card">Solicitar</string>
 </resources>

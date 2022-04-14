@@ -5,6 +5,7 @@ import android.content.ContextWrapper
 import android.content.res.ColorStateList
 import android.view.LayoutInflater
 import android.view.View
+import android.widget.AutoCompleteTextView
 import android.widget.FrameLayout
 import androidx.annotation.ColorInt
 import androidx.annotation.DrawableRes
@@ -18,12 +19,14 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
+import com.jesusrosas.kairosds.bankairos.databinding.GetCardFormLayoutBinding
 import com.jesusrosas.kairosds.bankairos.databinding.LoginLayoutBinding
 import com.jesusrosas.kairosds.bankairos.databinding.MyAccountsLayoutBinding
 import com.jesusrosas.kairosds.bankairos.databinding.RegisterLayoutBinding
 import com.jesusrosas.kairosds.bankairos.ui.account.AccountViewModel
 import com.jesusrosas.kairosds.bankairos.ui.account.CardAdapter
 import com.jesusrosas.kairosds.bankairos.ui.account.CardItem
+import com.jesusrosas.kairosds.bankairos.ui.account.DropDownAdapter
 import com.jesusrosas.kairosds.bankairos.ui.baseform.ErrorMessage
 import com.jesusrosas.kairosds.bankairos.ui.baseform.Event
 import com.jesusrosas.kairosds.bankairos.ui.baseform.SuccessStyles
@@ -54,10 +57,10 @@ fun FrameLayout.inflateViewInfo(inflateView: String?, vm: AccountViewModel) {
             this.vm = vm
             lifecycleOwner = this@inflateViewInfo.context.lifecycleOwner()
         }
-//        "Registrar" -> RegisterLayoutBinding.inflate(LayoutInflater.from(context), this, true).apply {
-//            this.vm = vm
-//            lifecycleOwner = this@inflateViewInfo.context.lifecycleOwner()
-//        }
+        "Select" -> GetCardFormLayoutBinding.inflate(LayoutInflater.from(context), this, true).apply {
+            this.vm = vm
+            lifecycleOwner = this@inflateViewInfo.context.lifecycleOwner()
+        }
         else -> {
         }
     }
@@ -134,6 +137,20 @@ fun RecyclerView.setCardAdapter(
 interface OnTextChanged {
 
     fun onChanged(text: String?)
+}
+
+@BindingAdapter(value = ["options", "onItemClickListener"], requireAll = false)
+fun AutoCompleteTextView.options(
+    cardOptions: List<String>?,
+    onItemClickListener: OnCardOptionListener
+) {
+    cardOptions?.let {
+        setAdapter(DropDownAdapter(context, it))
+        setOnItemClickListener { _, _, position, _ ->
+            setText(cardOptions[position], false)
+            onItemClickListener.onCardOptionClicked(position)
+        }
+    }
 }
 
 /*@BindingAdapter("onAfterChange")

@@ -19,7 +19,6 @@
         android:padding="@dimen/common_default">
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/tilEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/login_email"
@@ -29,7 +28,6 @@
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/etEmail"
                 android:text="@={vm.email}"
                 onTextChanged="@{(value) -> vm.emailChanged(value)}"
                 android:layout_width="match_parent"
@@ -39,7 +37,6 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/tilPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/common_default"
@@ -50,7 +47,6 @@
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/etPassword"
                 onTextChanged="@{(value) -> vm.passwordChanged(value)}"
                 android:text="@={vm.password}"
                 android:imeOptions="actionDone"
@@ -68,7 +64,6 @@
             android:layout_marginTop="32dp">
 
             <TextView
-                android:id="@+id/tvLoginQ"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/login_question"
@@ -88,7 +83,6 @@
                     style="@style/TextBlackSmall"/>
 
                 <TextView
-                    android:id="@+id/tvLoginLink"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/login_register"

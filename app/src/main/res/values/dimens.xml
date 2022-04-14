@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+    <dimen name="divider_width">1dp</dimen>
     <dimen name="common_min">8dp</dimen>
     <dimen name="common_default">16dp</dimen>
     <dimen name="common_middle">24dp</dimen>
     <dimen name="common_big">48dp</dimen>
+    <dimen name="common_max">64dp</dimen>
     <dimen name="nav_header_height">128dp</dimen>
 
     <dimen name="text_line_spacing_extra">2sp</dimen>
@@ -20,6 +23,5 @@
 
     <dimen name="letter_spacing_button">0.05</dimen>
     <dimen name="letter_spacing_text_button">0.03</dimen>
-    <dimen name="common_max">64dp</dimen>
 
 </resources>

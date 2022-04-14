@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
@@ -15,6 +16,7 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.navigation.NavigationView
 import com.jesusrosas.kairosds.bankairos.R
+import com.jesusrosas.kairosds.bankairos.data.model.UserProvider
 import com.jesusrosas.kairosds.bankairos.databinding.AccountFragmentBinding
 import com.jesusrosas.kairosds.bankairos.toast
 
@@ -50,13 +52,13 @@ class AccountFragment : Fragment(), NavigationView.OnNavigationItemSelectedListe
         val navigationView: NavigationView = view.findViewById(R.id.nav_view)
         navigationView.setNavigationItemSelectedListener(this)
 
-        viewModel.init()
+        viewModel.changeView("Accounts")
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
-            R.id.accounts -> activity?.toast("Accounts")
-            R.id.cards -> activity?.toast("Get Card")
+            R.id.accounts -> viewModel.changeView("Accounts")
+            R.id.cards -> viewModel.changeView("Select")
             R.id.loginFragment -> activity?.toast("Logout")
         }
 
