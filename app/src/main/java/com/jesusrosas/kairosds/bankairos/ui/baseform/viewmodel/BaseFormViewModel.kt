@@ -24,6 +24,9 @@ class BaseFormViewModel : ViewModel() {
     private val _isFormValid = MutableLiveData(false)
     val isFormValid: LiveData<Boolean> get() = _isFormValid
 
+    private val _showLoading = MutableLiveData<Boolean>()
+    val showLoading: LiveData<Boolean> get() = _showLoading
+
     val email = MutableLiveData<String>()
     val password = MutableLiveData<String>()
     private val _emailError = MutableLiveData<Event<ErrorMessage?>?>()
@@ -53,6 +56,7 @@ class BaseFormViewModel : ViewModel() {
     }
 
     fun btnAccessClicked(){
+        _showLoading.value = true
         if (_frame.value == "Ingresar") {
             login()
         } else {
@@ -70,6 +74,7 @@ class BaseFormViewModel : ViewModel() {
                 "Acceso exitoso"
             }
             else token
+            _showLoading.value = false
         }
 
     }
@@ -93,6 +98,7 @@ class BaseFormViewModel : ViewModel() {
                 }
                 else token
             }
+            _showLoading.value = false
         }
     }
 

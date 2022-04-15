@@ -9,6 +9,7 @@ import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
+import com.jesusrosas.kairosds.bankairos.LoadingDialog
 import com.jesusrosas.kairosds.bankairos.databinding.FragmentBaseFormBinding
 import com.jesusrosas.kairosds.bankairos.ui.baseform.viewmodel.BaseFormViewModel
 
@@ -16,6 +17,7 @@ class BaseFormFragment : Fragment() {
 
     private val viewModel: BaseFormViewModel by viewModels()
     private val safeArgs by navArgs<BaseFormFragmentArgs>()
+    private val loadingDialog: LoadingDialog by lazy { LoadingDialog(requireActivity()) }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -31,10 +33,18 @@ class BaseFormFragment : Fragment() {
 
         viewModel.changeForm(safeArgs.formType)
 
+        viewModel.showLoading.observe(viewLifecycleOwner) {
+            if (it) showLoading() else hideLoading()
+        }
+
         viewModel.tokenAccess.observe(viewLifecycleOwner) {
             Toast.makeText(context, it, Toast.LENGTH_SHORT).show()
             if (it != "error") findNavController().navigate(BaseFormFragmentDirections.toAccountFragment())
         }
     }
+
+    private fun showLoading() = loadingDialog.showDialog()
+
+    private fun hideLoading() = loadingDialog.dismissDialog()
 
 }

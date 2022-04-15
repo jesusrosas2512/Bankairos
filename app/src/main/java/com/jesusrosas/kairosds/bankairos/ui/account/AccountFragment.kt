@@ -6,7 +6,6 @@ import android.view.LayoutInflater
 import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
@@ -16,7 +15,6 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.navigation.NavigationView
 import com.jesusrosas.kairosds.bankairos.R
-import com.jesusrosas.kairosds.bankairos.data.model.UserProvider
 import com.jesusrosas.kairosds.bankairos.databinding.AccountFragmentBinding
 import com.jesusrosas.kairosds.bankairos.toast
 
