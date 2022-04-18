@@ -1,4 +1,4 @@
-package com.jesusrosas.kairosds.bankairos
+package com.jesusrosas.kairosds.bankairos.ui.utils
 
 import android.content.Context
 import android.content.ContextWrapper
@@ -19,14 +19,12 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
+import com.jesusrosas.kairosds.bankairos.R
 import com.jesusrosas.kairosds.bankairos.databinding.GetCardFormLayoutBinding
 import com.jesusrosas.kairosds.bankairos.databinding.LoginLayoutBinding
 import com.jesusrosas.kairosds.bankairos.databinding.MyAccountsLayoutBinding
 import com.jesusrosas.kairosds.bankairos.databinding.RegisterLayoutBinding
-import com.jesusrosas.kairosds.bankairos.ui.account.AccountViewModel
-import com.jesusrosas.kairosds.bankairos.ui.account.CardAdapter
-import com.jesusrosas.kairosds.bankairos.ui.account.CardItem
-import com.jesusrosas.kairosds.bankairos.ui.account.DropDownAdapter
+import com.jesusrosas.kairosds.bankairos.ui.account.*
 import com.jesusrosas.kairosds.bankairos.ui.baseform.ErrorMessage
 import com.jesusrosas.kairosds.bankairos.ui.baseform.Event
 import com.jesusrosas.kairosds.bankairos.ui.baseform.SuccessStyles

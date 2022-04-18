@@ -16,12 +16,15 @@ import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.navigation.NavigationView
 import com.jesusrosas.kairosds.bankairos.R
 import com.jesusrosas.kairosds.bankairos.databinding.AccountFragmentBinding
-import com.jesusrosas.kairosds.bankairos.toast
+import com.jesusrosas.kairosds.bankairos.ui.onboarding.OnBoardingFragmentDirections
+import com.jesusrosas.kairosds.bankairos.ui.utils.SuccessDialog
+import com.jesusrosas.kairosds.bankairos.ui.utils.toast
 
 class AccountFragment : Fragment(), NavigationView.OnNavigationItemSelectedListener {
 
     private val viewModel: AccountViewModel by viewModels()
     private lateinit var drawerLayout: DrawerLayout
+    private lateinit var successDialog: SuccessDialog
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -53,7 +56,8 @@ class AccountFragment : Fragment(), NavigationView.OnNavigationItemSelectedListe
         viewModel.changeView("Accounts")
 
         viewModel.newCardSuccess.observe(viewLifecycleOwner){
-            activity?.toast(it)
+            viewModel.changeView("Accounts")
+            successDialog = SuccessDialog(requireActivity(), it)
         }
     }
 
@@ -61,7 +65,7 @@ class AccountFragment : Fragment(), NavigationView.OnNavigationItemSelectedListe
         when (item.itemId) {
             R.id.accounts -> viewModel.changeView("Accounts")
             R.id.cards -> viewModel.changeView("Select")
-            R.id.loginFragment -> activity?.toast("Logout")
+            R.id.loginFragment -> findNavController().navigate(AccountFragmentDirections.toBaseFormFragment())
         }
 
         drawerLayout.closeDrawer(GravityCompat.START)

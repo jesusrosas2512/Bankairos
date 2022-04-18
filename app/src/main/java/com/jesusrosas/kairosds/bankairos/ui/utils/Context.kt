@@ -1,4 +1,4 @@
-package com.jesusrosas.kairosds.bankairos
+package com.jesusrosas.kairosds.bankairos.ui.utils
 
 import android.content.Context
 import android.content.Intent

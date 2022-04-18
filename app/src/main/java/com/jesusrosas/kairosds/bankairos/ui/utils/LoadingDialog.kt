@@ -1,8 +1,9 @@
-package com.jesusrosas.kairosds.bankairos
+package com.jesusrosas.kairosds.bankairos.ui.utils
 
 import android.app.Activity
 import android.graphics.drawable.ColorDrawable
 import android.app.Dialog
+import com.jesusrosas.kairosds.bankairos.R
 
 class LoadingDialog constructor(
     activity: Activity

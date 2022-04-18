@@ -1,4 +1,4 @@
-package com.jesusrosas.kairosds.bankairos
+package com.jesusrosas.kairosds.bankairos.ui.baseform
 
 import com.jesusrosas.kairosds.bankairos.data.model.UserProvider
 import io.github.nefilim.kjwt.JWT

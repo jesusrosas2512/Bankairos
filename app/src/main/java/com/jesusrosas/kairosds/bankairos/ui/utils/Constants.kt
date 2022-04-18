@@ -1,4 +1,4 @@
-package com.jesusrosas.kairosds.bankairos
+package com.jesusrosas.kairosds.bankairos.ui.utils
 
 object Constants {
 

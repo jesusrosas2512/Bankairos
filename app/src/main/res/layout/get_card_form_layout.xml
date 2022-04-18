@@ -7,7 +7,7 @@
             name="vm"
             type="com.jesusrosas.kairosds.bankairos.ui.account.AccountViewModel" />
 
-        <import type="com.jesusrosas.kairosds.bankairos.CardDropDownStyle" />
+        <import type="com.jesusrosas.kairosds.bankairos.ui.account.CardDropDownStyle" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

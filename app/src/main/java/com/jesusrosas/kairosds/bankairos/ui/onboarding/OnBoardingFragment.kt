@@ -18,8 +18,8 @@ import androidx.navigation.fragment.findNavController
 import com.google.android.gms.location.*
 import com.jesusrosas.kairosds.bankairos.data.model.LocationProvider
 import com.jesusrosas.kairosds.bankairos.databinding.OnBoardingFragmentBinding
-import com.jesusrosas.kairosds.bankairos.openAppSettings
-import com.jesusrosas.kairosds.bankairos.toast
+import com.jesusrosas.kairosds.bankairos.ui.utils.openAppSettings
+import com.jesusrosas.kairosds.bankairos.ui.utils.toast
 import java.util.*
 
 class OnBoardingFragment : Fragment() {

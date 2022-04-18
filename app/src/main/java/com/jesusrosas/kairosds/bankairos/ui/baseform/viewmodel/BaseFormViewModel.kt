@@ -1,7 +1,7 @@
 package com.jesusrosas.kairosds.bankairos.ui.baseform.viewmodel
 
 import androidx.lifecycle.*
-import com.jesusrosas.kairosds.bankairos.UserMapper
+import com.jesusrosas.kairosds.bankairos.ui.baseform.UserMapper
 import com.jesusrosas.kairosds.bankairos.ui.baseform.ErrorMessage
 import com.jesusrosas.kairosds.bankairos.ui.baseform.Event
 import com.jesusrosas.kairosds.bankairos.ui.baseform.ValidationRules

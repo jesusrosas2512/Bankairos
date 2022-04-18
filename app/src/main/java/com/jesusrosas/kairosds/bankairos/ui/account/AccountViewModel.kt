@@ -5,7 +5,6 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.jesusrosas.kairosds.bankairos.OnCardOptionListener
 import com.jesusrosas.kairosds.bankairos.data.model.CardNamesProvider
 import com.jesusrosas.kairosds.bankairos.data.model.LocationProvider
 import com.jesusrosas.kairosds.bankairos.data.model.UserProvider
@@ -124,7 +123,6 @@ class AccountViewModel : ViewModel(), OnCardOptionListener {
     }
 
     fun btnRequestClicked(){
-        Log.i("Debug", "Requesting card")
         viewModelScope.launch {
             val newCard = NewCardItem(
                 UserProvider.user.id,
@@ -132,8 +130,13 @@ class AccountViewModel : ViewModel(), OnCardOptionListener {
                 _selectedCard.value.toString()
             )
             val result = getCardsUseCase(newCard)
-            _newCardSuccess.value = result.success
+            if (result.success != "error"){
+                _newCardSuccess.value = result.success
+                _isBtnEnabled.value = false
+            }
+
         }
+
     }
 
     private fun validateForm() {

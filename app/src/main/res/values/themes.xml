@@ -25,10 +25,6 @@
         <item name="android:textSize">@dimen/text_small</item>
     </style>
 
-    <style name="Theme.NavigationDrawer.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
-        <item name="colorControlNormal">@color/primaryDarkColor</item>
-    </style>
-
     <style name="OutlinedButton" parent="Widget.MaterialComponents.Button.OutlinedButton">
         <item name="android:textAllCaps">false</item>
         <item name="android:textColor">@color/button</item>
@@ -36,6 +32,14 @@
         <item name="android:textStyle">bold</item>
         <item name="android:letterSpacing">@dimen/letter_spacing_button</item>
         <item name="strokeColor">@color/button</item>
+    </style>
+
+    <style name="SuccessDialog" parent="ThemeOverlay.MaterialComponents.MaterialAlertDialog">
+        <item name="buttonBarNeutralButtonStyle">@style/NoCapsButton</item>
+    </style>
+
+    <style name="NoCapsButton" parent="Widget.MaterialComponents.Button.TextButton.Dialog">
+        <item name="android:textAllCaps">false</item>
     </style>
 
 </resources>

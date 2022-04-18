@@ -1,6 +1,6 @@
 package com.jesusrosas.kairosds.bankairos.core
 
-import com.jesusrosas.kairosds.bankairos.Constants.HEADER_TOKEN
+import com.jesusrosas.kairosds.bankairos.ui.utils.Constants.HEADER_TOKEN
 import com.jesusrosas.kairosds.bankairos.data.model.TokenProvider
 import okhttp3.Interceptor
 import okhttp3.Response

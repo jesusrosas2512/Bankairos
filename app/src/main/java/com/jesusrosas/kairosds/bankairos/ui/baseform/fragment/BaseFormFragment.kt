@@ -9,7 +9,7 @@ import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
-import com.jesusrosas.kairosds.bankairos.LoadingDialog
+import com.jesusrosas.kairosds.bankairos.ui.utils.LoadingDialog
 import com.jesusrosas.kairosds.bankairos.databinding.FragmentBaseFormBinding
 import com.jesusrosas.kairosds.bankairos.ui.baseform.viewmodel.BaseFormViewModel
 
