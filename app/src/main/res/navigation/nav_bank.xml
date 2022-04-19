@@ -30,6 +30,8 @@
         <action
             android:id="@+id/to_accountFragment"
             app:destination="@id/accountFragment"
+            app:popUpTo="@id/accountFragment"
+            app:popUpToInclusive="true"
             app:enterAnim="@anim/slide_in_right"
             app:popEnterAnim="@anim/slide_in_left" />
 
@@ -42,6 +44,10 @@
         tools:layout="@layout/account_fragment" >
         <action
             android:id="@+id/to_baseFormFragment"
-            app:destination="@id/baseFormFragment" />
+            app:destination="@id/baseFormFragment"
+            app:popUpTo="@id/baseFormFragment"
+            app:popUpToInclusive="true"
+            app:enterAnim="@anim/slide_in_right"
+            app:popEnterAnim="@anim/slide_in_left" />
     </fragment>
 </navigation>

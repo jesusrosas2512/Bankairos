@@ -70,6 +70,7 @@ class AccountViewModel : ViewModel(), OnCardOptionListener {
 
     private fun initMyAccounts() {
         _isLoading.value = true
+        _isBtnEnabled.value = false
 
         viewModelScope.launch {
             val result = getCardsUseCase()
@@ -132,7 +133,6 @@ class AccountViewModel : ViewModel(), OnCardOptionListener {
             val result = getCardsUseCase(newCard)
             if (result.success != "error"){
                 _newCardSuccess.value = result.success
-                _isBtnEnabled.value = false
             }
 
         }
