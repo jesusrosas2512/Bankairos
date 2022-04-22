@@ -7,7 +7,7 @@
             name="vm"
             type="com.jesusrosas.kairosds.bankairos.ui.baseform.viewmodel.BaseFormViewModel" />
 
-        <import type="com.jesusrosas.kairosds.bankairos.ui.baseform.SuccessStyles" />
+        <import type="com.jesusrosas.kairosds.bankairos.ui.baseform.login.entities.SuccessStyles" />
 
     </data>
 

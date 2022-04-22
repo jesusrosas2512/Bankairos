@@ -25,9 +25,9 @@ import com.jesusrosas.kairosds.bankairos.databinding.LoginLayoutBinding
 import com.jesusrosas.kairosds.bankairos.databinding.MyAccountsLayoutBinding
 import com.jesusrosas.kairosds.bankairos.databinding.RegisterLayoutBinding
 import com.jesusrosas.kairosds.bankairos.ui.account.*
-import com.jesusrosas.kairosds.bankairos.ui.baseform.ErrorMessage
-import com.jesusrosas.kairosds.bankairos.ui.baseform.Event
-import com.jesusrosas.kairosds.bankairos.ui.baseform.SuccessStyles
+import com.jesusrosas.kairosds.bankairos.ui.baseform.utils.ErrorMessage
+import com.jesusrosas.kairosds.bankairos.ui.baseform.utils.Event
+import com.jesusrosas.kairosds.bankairos.ui.baseform.login.entities.SuccessStyles
 import com.jesusrosas.kairosds.bankairos.ui.baseform.viewmodel.BaseFormViewModel
 
 @BindingAdapter(value = ["inflateView", "vm"], requireAll = true)

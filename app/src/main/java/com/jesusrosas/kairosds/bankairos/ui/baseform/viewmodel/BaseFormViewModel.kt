@@ -1,10 +1,10 @@
 package com.jesusrosas.kairosds.bankairos.ui.baseform.viewmodel
 
 import androidx.lifecycle.*
-import com.jesusrosas.kairosds.bankairos.ui.baseform.UserMapper
-import com.jesusrosas.kairosds.bankairos.ui.baseform.ErrorMessage
-import com.jesusrosas.kairosds.bankairos.ui.baseform.Event
-import com.jesusrosas.kairosds.bankairos.ui.baseform.ValidationRules
+import com.jesusrosas.kairosds.bankairos.ui.baseform.login.entities.UserMapper
+import com.jesusrosas.kairosds.bankairos.ui.baseform.utils.ErrorMessage
+import com.jesusrosas.kairosds.bankairos.ui.baseform.utils.Event
+import com.jesusrosas.kairosds.bankairos.ui.baseform.utils.ValidationRules
 import com.jesusrosas.kairosds.bankairos.domain.AccessUseCase
 import com.jesusrosas.kairosds.bankairos.ui.baseform.login.entities.Login
 import com.jesusrosas.kairosds.bankairos.ui.baseform.register.Register

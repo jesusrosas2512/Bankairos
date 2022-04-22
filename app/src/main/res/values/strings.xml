@@ -44,4 +44,5 @@
     <string name="options_black_card">Tarjeta black</string>
     <string name="request_card">Solicitar</string>
     <string name="dialog_confirm">Aceptar</string>
+    <string name="time_format">00:00</string>
 </resources>
